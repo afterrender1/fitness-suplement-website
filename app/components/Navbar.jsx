@@ -35,7 +35,7 @@ export default function Navbar() {
             <nav
                 className={`fixed w-full z-60 top-0 transition-all duration-500 ease-out  border-b ${inter.className
                     } ${scrolled || isOpen
-                        ? "bg-black/95 backdrop-blur-xl border-white/10 py-2 sm:py-3 shadow-2xl"
+                        ? "bg-black/95 backdrop-blur-xl border-white/10 py-2 sm:py-1 shadow-2xl"
                         : "bg-transparent border-transparent py-4 sm:py-6 2xl:py-8"
                     }`}
             >
