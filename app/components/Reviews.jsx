@@ -60,7 +60,7 @@ export default function Reviews() {
                         </h2>
                     </div>
 
-                    <div className="flex items-center gap-4 bg-white px-6 py-4 rounded-2xl border border-slate-200 shadow-sm">
+                    <div className="flex items-center gap-4 bg-white px-6 py-4 rounded-lg border border-slate-200 shadow-xs">
                         <div className="flex -space-x-3">
                             {reviews.map((review, i) => (
                                 <div
