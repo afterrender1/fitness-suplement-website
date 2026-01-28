@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { ArrowRight, Star, ShieldCheck } from "lucide-react";
+import Link from "next/link";
 
 export default function Hero() {
     return (
@@ -61,10 +62,10 @@ export default function Hero() {
 
                     {/* Action Area */}
                     <div className="flex flex-col sm:flex-row gap-4 mb-12">
-                        <button className="group flex items-center justify-center gap-3 bg-[#93D2D9] text-black px-10 py-4 rounded-xl font-semibold uppercase tracking-wider hover:bg-white transition-all duration-300">
+                        <Link href="/shop/supplements" className="group flex items-center justify-center gap-3 bg-[#93D2D9] text-black px-10 py-4 rounded-xl font-semibold uppercase tracking-wider hover:bg-white transition-all duration-300">
                             Pick Supplements
                             <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-                        </button>
+                        </Link>
 
                         <button className="flex items-center justify-center gap-2 bg-white/5 backdrop-blur-md border uppercase border-white/10 text-white px-10 py-4 rounded-xl font-semibold hover:bg-white/10 transition-all">
                             GYM Enrollment
