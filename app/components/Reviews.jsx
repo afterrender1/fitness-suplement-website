@@ -36,7 +36,7 @@ export default function Reviews() {
     ];
 
     return (
-        <section className={`bg-[#FAFAFA] py-24 md:py-32 overflow-hidden ${inter.className}`}>
+        <section id="reviews" className={`bg-[#FAFAFA] py-24 md:py-32 overflow-hidden ${inter.className}`}>
             <div className="max-w-7xl mx-auto px-6 lg:px-8">
 
                 {/* Premium Header */}

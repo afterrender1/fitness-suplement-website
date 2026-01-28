@@ -61,13 +61,28 @@ export default function Hero() {
                     </p>
 
                     {/* Action Area */}
-                    <div className="flex flex-col sm:flex-row gap-4 mb-12">
-                        <Link href="/shop/supplements" className="group flex items-center justify-center gap-3 bg-[#93D2D9] text-black px-10 py-4 rounded-xl font-semibold uppercase tracking-wider hover:bg-white transition-all duration-300">
-                            Pick Supplements
-                            <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-                        </Link>
+                    <div className="flex flex-col sm:flex-row gap-4 mb-12 items-start sm:items-center">
+                        <div className="relative group">
+                            <Link
+                                href="/shop/supplements"
+                                className="flex items-center justify-center gap-3 bg-[#93D2D9] text-black px-10 py-4 rounded-xl font-semibold uppercase tracking-wider hover:bg-white transition-all duration-300 shadow-lg shadow-[#93D2D9]/25 hover:shadow-white/20"
+                            >
+                                Pick Supplements
+                                <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                            </Link>
 
-                        <button className="flex items-center justify-center gap-2 bg-white/5 backdrop-blur-md border uppercase border-white/10 text-white px-10 py-4 rounded-xl font-semibold hover:bg-white/10 transition-all">
+                            {/* Professional Offer Tag with Arrow */}
+                            <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center">
+                                {/* Upward pointing arrow/caret */}
+                                <div className="w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-b-[6px] border-b-slate-900 drop-shadow-sm"></div>
+
+                                <div className="bg-green-800 text-white text-[11px] font-bold px-4 py-1.5 rounded-sm shadow-lg border border-slate-800 uppercase tracking-widest whitespace-nowrap">
+                                    Save 50% Today
+                                </div>
+                            </div>
+                        </div>
+
+                        <button className="flex items-center justify-center gap-2 bg-white/5 backdrop-blur-md border uppercase border-white/10 text-white px-10 py-4 rounded-xl font-semibold hover:bg-white/10 transition-all sm:mt-0 mt-6">
                             GYM Enrollment
                         </button>
                     </div>
