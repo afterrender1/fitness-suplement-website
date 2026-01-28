@@ -6,18 +6,42 @@ export default function Hero() {
         <section className="relative w-full h-[95vh] flex items-center overflow-hidden bg-black">
 
             {/* Background with Intelligent Gradient Mask */}
+            {/* Background with Intelligent Gradient Mask */}
             <div className="absolute inset-0 z-0">
+
+                {/* XS (mobile) */}
+                <Image
+                    src="/images/h-mobile.jpg"
+                    alt="Premium Supplements"
+                    fill
+                    priority
+                    className="object-cover opacity-80 object-center block sm:hidden"
+                />
+
+                {/* SM (small tablets) */}
+                <Image
+                    src="/images/h-mobile.jpg"
+                    alt="Premium Supplements"
+                    fill
+                    priority
+                    className="object-cover opacity-80 hidden sm:block md:hidden"
+                />
+
+                {/* MD & up (desktop) */}
                 <Image
                     src="/images/h1.jpg"
                     alt="Premium Supplements"
                     fill
                     priority
-                    className="object-cover object-right md:object-center opacity-80"
+                    className="object-cover object-right md:object-center opacity-80 hidden md:block"
                 />
-                {/* Radical gradient: Darker on the left for text readability, clear on the right */}
+
+                {/* Gradient overlays (same for all) */}
                 <div className="absolute inset-0 bg-linear-to-r from-black via-black/60 to-transparent" />
                 <div className="absolute inset-0 bg-linear-to-t from-black via-transparent to-transparent" />
+
             </div>
+
 
             <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
                 <div className="max-w-2xl mt-5">
@@ -43,7 +67,7 @@ export default function Hero() {
                         </button>
 
                         <button className="flex items-center justify-center gap-2 bg-white/5 backdrop-blur-md border uppercase border-white/10 text-white px-10 py-4 rounded-xl font-semibold hover:bg-white/10 transition-all">
-                           GYM Enrollment
+                            GYM Enrollment
                         </button>
                     </div>
 

@@ -38,7 +38,7 @@ export default function Navbar() {
                         : "bg-transparent border-transparent py-4 sm:py-6 2xl:py-8"
                     }`}
             >
-                <div className="max-w-480 mx-auto px-4 xs:px-6 md:px-10 2xl:px-16">
+                <div className="max-w-350 mx-auto px-4 xs:px-6 md:px-10 2xl:px-16">
                     <div className="flex items-center justify-between">
 
                         {/* Logo - Fully Responsive Text Sizes */}
@@ -75,7 +75,7 @@ export default function Navbar() {
                                     href="tel:+123456789"
                                     className="group relative inline-flex items-center gap-2 px-4 py-2 lg:px-6 lg:py-3 2xl:px-10 2xl:py-5 rounded-full overflow-hidden bg-[#93D2D9  ] transition-transform active:scale-95"
                                 >
-                                    <span className="relative z-10 flex items-center gap-2 text-black font-black text-[10px] lg:text-xs 2xl:text-lg uppercase italic tracking-tighter">
+                                    <span className="relative z-10 flex items-center gap-2 text-gray-50 font-black text-[10px] lg:text-xs 2xl:text-lg uppercase italic tracking-tighter">
                                         <Phone size={14} className="2xl:w-6 2xl:h-6" />
                                         <span>Call Now</span>
                                         <ArrowUpRight size={12} className="2xl:w-5 2xl:h-5 opacity-50 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
