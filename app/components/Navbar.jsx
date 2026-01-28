@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Inter, Poppins } from "next/font/google";
 import { Menu, X, Phone, ArrowUpRight } from "lucide-react";
+import Image from "next/image";
 
 const inter = Inter({ subsets: ["latin"] });
 const poppins = Poppins({ weight: ["400", "700", "900"], subsets: ["latin"] });
@@ -32,7 +33,7 @@ export default function Navbar() {
     return (
         <>
             <nav
-                className={`fixed w-full z-60 top-0 transition-all duration-500 ease-out border-b ${inter.className
+                className={`fixed w-full z-60 top-0 transition-all duration-500 ease-out  border-b ${inter.className
                     } ${scrolled || isOpen
                         ? "bg-black/95 backdrop-blur-xl border-white/10 py-2 sm:py-3 shadow-2xl"
                         : "bg-transparent border-transparent py-4 sm:py-6 2xl:py-8"
@@ -42,14 +43,29 @@ export default function Navbar() {
                     <div className="flex items-center justify-between">
 
                         {/* Logo - Fully Responsive Text Sizes */}
-                        <Link href="/" className={`group relative z-70 ${poppins.className}`}>
-                            <div className="flex items-baseline gap-0.5 sm:gap-1">
-                                <span className="text-xl xs:text-2xl lg:text-3xl 2xl:text-4xl font-black tracking-tighter text-white transition-colors group-hover:text-yellow-400">
-                                    Prime
-                                </span>
-                                <span className="text-lg xs:text-xl lg:text-2xl 2xl:text-3xl font-light -tracking-widest text-[#93D2D9] uppercase">
-                                    Supps
-                                </span>
+                        <Link
+                            href="/"
+                            className={`group relative z-70 ${poppins.className}`}
+                        >
+                            <div className="flex items-center gap-2">
+
+                                {/* Logo Wrapper */}
+                                <div
+                                    className="
+        relative
+        w-22.5 xs:w-[110px] sm:w-30 md:w-32.5 lg:w-37.5 2xl:w-45
+        h-6 xs:h-[28px] sm:h-7.5 md:h-8.5 lg:h-9.5 2xl:h-11
+      "
+                                >
+                                    <Image
+                                        src="/images/brand.png"
+                                        alt="Prime Supps Logo"
+                                        fill
+                                        priority
+                                        className="object-contain transition-transform duration-300 group-hover:scale-102"
+                                    />
+                                </div>
+
                             </div>
                         </Link>
 
@@ -62,7 +78,7 @@ export default function Navbar() {
                                         className="relative group py-2 text-xs lg:text-sm 2xl:text-base font-bold uppercase tracking-widest text-gray-300 hover:text-white transition-all"
                                     >
                                         {link.name}
-                                        <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-400 group-hover:w-full transition-all duration-300" />
+                                        <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#93D2D9] group-hover:w-full transition-all duration-300" />
                                     </Link>
                                 </li>
                             ))}
