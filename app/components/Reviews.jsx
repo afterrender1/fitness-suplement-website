@@ -1,4 +1,3 @@
-"use client";
 
 import { Star, Quote, BadgeCheck } from "lucide-react";
 import { Poppins, Inter } from "next/font/google";
