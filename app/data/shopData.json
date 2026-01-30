@@ -1,0 +1,187 @@
+{
+  "store_name": "Jacked Nutrition",
+  "location": "Pakistan",
+  "certifications": ["DRAP Registered", "GMP Certified"],
+  "delivery_info": "3–5 Working Days",
+  "payment_offers": "Extra discount on Debit/Credit Card",
+  "products": [
+    {
+      "vendor": "Superior14",
+      "name": "HYDRO WHEY ZERO PROTEIN POWDER",
+      "protein_per_serving": "34g",
+      "sale_price": 31960.0,
+      "regular_price": 39950.0,
+      "rating": 4.6,
+      "reviews": 47,
+      "benefits": ["Muscle Repair", "Growth", "Enhanced Recovery"],
+      "technical_details": {
+        "carbs": "<1g",
+        "fats": "<1g",
+        "sugar": "0g",
+        "enzymes": "Lactase (for digestion)",
+        "amino_acids": "Added BCAAs",
+        "glutamine": "680mg"
+      },
+      "usage": "1 scoop with 300ml water, twice daily (one post-workout).",
+      "image_url": "superior14_hydro_whey_zero_5lbs.jpg"
+    },
+    {
+      "vendor": "Superior14",
+      "name": "RIPPED WHEY PROTEIN",
+      "protein_per_serving": "43g",
+      "sale_price": 29160.0,
+      "regular_price": 36450.0,
+      "rating": 4.8,
+      "benefits": ["Enhanced Recovery", "Boost Metabolism", "Body Efficiency"],
+      "image_url": "superior14_ripped_whey.jpg"
+    },
+    {
+      "vendor": "BSN",
+      "name": "Syntha 6",
+      "protein_per_serving": "47g",
+      "sale_price": 19305.0,
+      "regular_price": 21450.0,
+      "rating": 5.0,
+      "benefits": ["Builds Muscle", "Support Muscle Recovery"],
+      "image_url": "bsn_syntha6.jpg"
+    },
+    {
+      "vendor": "kevin levrone",
+      "name": "ANABOLIC ISO WHEY",
+      "protein_per_serving": "30g",
+      "sale_price": 28305.0,
+      "regular_price": 31450.0,
+      "rating": 4.7,
+      "benefits": ["Muscle Repair", "Boost Metabolism", "Body Efficiency"],
+      "image_url": "kevin_levrone_anabolic_iso.jpg"
+    },
+    {
+      "vendor": "kevin levrone",
+      "name": "ANABOLIC PRIME PRO",
+      "protein_per_serving": "30g",
+      "sale_price": 23355.0,
+      "regular_price": 25950.0,
+      "rating": 5.0,
+      "benefits": ["Boost Metabolism", "Muscle Repair", "Growth"],
+      "image_url": "kevin_levrone_prime_pro.jpg"
+    },
+    {
+      "vendor": "Jacked Nutrition",
+      "name": "ISO JACKED WHEY PROTEIN - ULTRA-PREMIUM",
+      "protein_per_serving": "27g",
+      "sale_price": 495.0,
+      "regular_price": 550.0,
+      "rating": 4.5,
+      "benefits": ["Fuel Workouts", "Builds Muscle", "Enhanced Performance"],
+      "image_url": "jacked_nutrition_iso_jacked.jpg"
+    },
+    {
+      "vendor": "Jacked Nutrition",
+      "name": "JACKED BROWN RICE PROTEIN",
+      "protein_per_serving": "25g",
+      "sale_price": 5560.0,
+      "regular_price": 6950.0,
+      "rating": 4.7,
+      "benefits": ["Vegan Friendly", "Muscle Recovery", "Performance"],
+      "image_url": "jacked_nutrition_brown_rice.jpg"
+    },
+    {
+      "vendor": "DYMATIZE NUTRITION",
+      "name": "ISO 100",
+      "protein_per_serving": "25g",
+      "sale_price": 19305.0,
+      "regular_price": 21450.0,
+      "rating": 4.8,
+      "benefits": ["Muscle Repair", "Recovery", "Builds Muscle"],
+      "image_url": "dymatize_iso100.jpg"
+    },
+    {
+      "vendor": "DY Nutrition",
+      "name": "SHADOWHEY HYDROLYSATE WHEY PROTEIN",
+      "protein_per_serving": "25g",
+      "sale_price": 31960.0,
+      "regular_price": 39950.0,
+      "rating": 4.7,
+      "benefits": ["Rapid Absorption", "Muscle Repair", "Growth"],
+      "image_url": "dy_nutrition_shadowhey.jpg"
+    },
+    {
+      "vendor": "BPI Sports",
+      "name": "ISO HD BY BPI SPORTS",
+      "protein_per_serving": "25g",
+      "sale_price": 30555.0,
+      "regular_price": 33950.0,
+      "benefits": ["Muscle Repair", "Growth", "Enhanced Recovery"],
+      "image_url": "bpi_sports_iso_hd.jpg"
+    },
+    {
+      "vendor": "BPI Sports",
+      "name": "WHEY HD",
+      "protein_per_serving": "25g",
+      "sale_price": 22905.0,
+      "regular_price": 25450.0,
+      "rating": 4.9,
+      "benefits": ["Fuel Workouts", "Builds Muscle", "Performance"],
+      "image_url": "bpi_sports_whey_hd.jpg"
+    },
+    {
+      "vendor": "Superior14",
+      "name": "WHEY CORE PROTEIN",
+      "protein_per_serving": "32g",
+      "sale_price": 15960.0,
+      "regular_price": 19950.0,
+      "rating": 4.6,
+      "benefits": ["Builds Muscle", "Support Muscle Recovery"],
+      "image_url": "superior14_whey_core.jpg"
+    },
+    {
+      "vendor": "Superior14",
+      "name": "HYDRO WHEY ZERO PROTEIN POWDER",
+      "protein_per_serving": "34g",
+      "sale_price": 19960.0,
+      "regular_price": 24950.0,
+      "rating": 4.6,
+      "benefits": ["Enhanced Recovery", "Growth"],
+      "image_url": "superior14_hydro_whey_zero_2lbs.jpg"
+    },
+    {
+      "vendor": "Superior14",
+      "name": "ISO PRO",
+      "protein_per_serving": "30g",
+      "sale_price": 17160.0,
+      "regular_price": 21450.0,
+      "rating": 4.9,
+      "benefits": ["Builds Muscle", "Muscle Repair", "Growth"],
+      "image_url": "superior14_iso_pro.jpg"
+    },
+    {
+      "vendor": "Superior14",
+      "name": "ISO DEFINITION",
+      "protein_per_serving": "30g",
+      "sale_price": 17960.0,
+      "regular_price": 22450.0,
+      "rating": 5.0,
+      "benefits": ["Builds Muscle", "Muscle Repair", "Growth"],
+      "image_url": "superior14_iso_definition.jpg"
+    },
+    {
+      "vendor": "Ultimate Nutrition",
+      "name": "Prostar 100% Whey Protein",
+      "protein_per_serving": "30g",
+      "sale_price": 28305.0,
+      "regular_price": 31450.0,
+      "rating": 4.0,
+      "benefits": ["Muscle Repair", "Growth", "Enhanced Recovery"],
+      "image_url": "ultimate_nutrition_prostar.jpg"
+    },
+    {
+      "vendor": "MuscleMeds",
+      "name": "CARNIVOR BEEF PROTEIN",
+      "protein_per_serving": "29g",
+      "sale_price": 14805.0,
+      "regular_price": 16450.0,
+      "benefits": ["Muscle Repair", "Growth", "Dairy Free"],
+      "image_url": "musclemeds_carnivor.jpg"
+    }
+  ]
+}
