@@ -5,12 +5,14 @@ import { ArrowRight, Star, ShieldCheck } from "lucide-react";
 import Link from "next/link";
 import { Inter, Poppins } from "next/font/google";
 import { motion, useScroll, useTransform } from "framer-motion";
-
+import InfoModal from "./InfoModal";
+import { useState } from "react";
 const inter = Inter({ subsets: ["latin"] });
 const poppins = Poppins({ subsets: ["latin"], weight: ["300", "700"] });
 
 export const AuthorityHero = () => {
     const { scrollYProgress } = useScroll();
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     const scale = useTransform(scrollYProgress, [0, 0.25], [1, 0.96]);
     const opacity = useTransform(scrollYProgress, [0, 0.3], [1, 0]);
@@ -19,6 +21,14 @@ export const AuthorityHero = () => {
     return (
         <section className="relative lg:mt-20 w-full bg-black overflow-hidden rounded-2xl min-h-0 md:min-h-0">
             {/* MOBILE ONLY: Background Image Aspect */}
+            <InfoModal
+                isOpen={isModalOpen}
+                onClose={() => setIsModalOpen(false)}
+                title="Elite Series Coming Soon"
+                message="Our most advanced performance line is currently in the final testing phase. Sign up for our newsletter to get exclusive early access and launch-day discounts."
+                size="md"
+            />
+
             <div className="absolute inset-0 block md:hidden opacity-40">
                 <Image
                     src="/images/shop/sup1-hero-c.png"
@@ -39,7 +49,7 @@ export const AuthorityHero = () => {
                 className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 md:py-24 lg:py-28"
             >
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-                    
+
                     {/* LEFT CONTENT */}
                     <div className="max-w-xl relative z-20">
                         {/* Heading */}
@@ -75,6 +85,7 @@ export const AuthorityHero = () => {
                                 rounded-xl font-semibold uppercase tracking-wider
                                 hover:bg-white transition-all duration-300
                                 shadow-lg shadow-[#93D2D9]/25"
+                                onClick={() => setIsModalOpen(true)}
                             >
                                 Shop Elite Series
                                 <ArrowRight
