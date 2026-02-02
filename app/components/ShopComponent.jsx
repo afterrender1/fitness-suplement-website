@@ -3,8 +3,8 @@
 import React, { useState } from 'react';
 import { SlidersHorizontal } from 'lucide-react';
 import { Poppins, Inter } from "next/font/google";
-import ShopProductCard from "@/app/components/ShopProductCard"; 
-import shopData from "@/app/data/shopData.json"; 
+import ShopProductCard from "@/app/components/ShopProductCard";
+import shopData from "@/app/data/shopData.json";
 
 const poppins = Poppins({ weight: ["500", "600", "700"], subsets: ["latin"] });
 const inter = Inter({ subsets: ["latin"] });
@@ -15,7 +15,7 @@ const ShopComponent = () => {
     const products = shopData.products;
 
     return (
-        <main className={`min-h-screen bg-[#FAFAFA] rounded-t-3xl md:rounded-t-4xl shadow-[0_-20px_50px_rgba(0,0,0,0.1)] relative z-10 pt-24 pb-32 2xl:pt-40 2xl:pb-48 ${inter.className}`}>
+        <main className={`min-h-screen bg-[#FAFAFA] rounded-t-3xl md:rounded-t-4xl shadow-[0_-20px_50px_rgba(0,0,0,0.1)] relative z-10 pt-12 sm:pt-18 pb-32 2xl:pt-40 2xl:pb-48 ${inter.className}`}>
             <div className="max-w-7xl 2xl:max-w-440 mx-auto px-6 lg:px-8 2xl:px-12">
 
                 {/* Header Section */}
@@ -43,13 +43,14 @@ const ShopComponent = () => {
                 </div>
 
                 {/* Filter Bar */}
-                <div className="flex items-center justify-between mb-12">
-                    <div className="flex gap-4 overflow-x-auto pb-2 no-scrollbar">
+                <div className="flex flex-col sm:flex-row items-center justify-between mb-6 sm:mb-12 gap-4">
+                    {/* Category scrollable buttons */}
+                    <div className="flex gap-4 overflow-x-auto no-scrollbar pb-2 sm:pb-0 w-full sm:w-auto">
                         {["All", "Protein", "Vegan", "Recovery"].map((cat) => (
                             <button
                                 key={cat}
                                 onClick={() => setActiveCategory(cat)}
-                                className={`px-6 py-2 rounded-full text-xs font-bold transition-all ${activeCategory === cat
+                                className={`shrink-0 px-5 py-2 rounded-sm text-xs sm:text-sm font-bold transition-all ${activeCategory === cat
                                         ? "bg-black text-white"
                                         : "bg-white text-slate-500 hover:bg-slate-100"
                                     }`}
@@ -58,7 +59,9 @@ const ShopComponent = () => {
                             </button>
                         ))}
                     </div>
-                    <button className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-slate-900">
+
+                    {/* Filter button */}
+                    <button className="flex items-center gap-2 text-xs sm:text-sm font-bold uppercase tracking-widest text-slate-900">
                         <SlidersHorizontal size={16} /> Filter
                     </button>
                 </div>
