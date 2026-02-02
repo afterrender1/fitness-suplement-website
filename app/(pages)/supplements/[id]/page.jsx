@@ -1,17 +1,45 @@
-import React from 'react';
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Poppins, Inter } from "next/font/google";
-import { 
-    Star, ArrowLeft, ShieldCheck, Zap, ShoppingCart, 
-    CheckCircle2, Truck, ChevronRight, Package, Clock, Award 
+import {
+    Star,
+    ArrowLeft,
+    ShieldCheck,
+    Zap,
+    ShoppingCart,
+    CheckCircle2,
+    Truck,
+    ChevronRight,
+    Package,
+    Clock,
+    Award,
+    CreditCard,
+    Heart,
+    Share2,
+
 } from "lucide-react";
 import shopData from "@/app/data/shopData.json";
 import ProductImageGallery from "@/app/components/ProductImageGallery";
 
-const poppins = Poppins({ weight: ["400", "500", "600", "700"], subsets: ["latin"] });
-const inter = Inter({ subsets: ["latin"] });
+const poppins = Poppins({
+    weight: ["400", "500", "600", "700"],
+    subsets: ["latin"],
+    variable: "--font-poppins",
+});
+const inter = Inter({
+    subsets: ["latin"],
+    variable: "--font-inter",
+});
+
+// Theme color constant
+const THEME = {
+    primary: "#93D2D9",
+    primaryLight: "#E8F6F8",
+    primaryDark: "#6BBCC6",
+    dark: "#0F172A",
+    gray: "#64748B"
+};
 
 export default async function ProductDetailPage({ params }) {
     const { id } = await params;
@@ -24,152 +52,365 @@ export default async function ProductDetailPage({ params }) {
         : null;
 
     const relatedProducts = shopData.products
-        .filter(p => p.id !== id)
+        .filter((p) => p.vendor === product.vendor && p.id !== id)
         .slice(0, 4);
 
     return (
         <div className={`min-h-screen bg-[#FAFAFA] text-slate-900 ${inter.className}`}>
-            <nav className="sticky top-0 z-50 bg-[#FAFAFA]/80 backdrop-blur-md border-b border-slate-200/50">
-                <div className="max-w-360 2xl:max-w-450 mx-auto px-4 sm:px-8 h-16 md:h-20 flex items-center justify-between">
-                    <Link href="/" className="group flex items-center gap-2">
-                        <div className="w-8 h-8 rounded-full bg-white border border-slate-200 flex items-center justify-center group-hover:border-[#5ecad6] group-hover:text-[#5ecad6] transition-all">
-                            <ArrowLeft size={16} strokeWidth={2.5} />
+
+            {/* Top Trust Bar */}
+            <div
+                className="text-white text-center py-2.5 px-4 text-[11px] font-semibold tracking-[0.15em] uppercase"
+                style={{ backgroundColor: THEME.dark }}
+            >
+                <span className="inline-flex items-center gap-2">
+                    <Zap size={14} style={{ color: THEME.primary }} />
+                    {shopData.payment_offers} • {shopData.delivery_info.timeline || shopData.delivery_info}
+                </span>
+            </div>
+
+            {/* Professional Navbar */}
+            <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200/60">
+                <div className="max-w-360 mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+                    <Link
+                        href="/"
+                        className="group flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-slate-50 transition-colors"
+                    >
+                        <div
+                            className="w-8 h-8 rounded-full flex items-center justify-center transition-colors"
+                            style={{ backgroundColor: THEME.primaryLight }}
+                        >
+                            <ArrowLeft size={16} style={{ color: THEME.primaryDark }} />
                         </div>
-                        <span className="text-[10px] font-black uppercase tracking-[0.2em] hidden xs:block">Store Collection</span>
+                        <span className="hidden sm:block text-sm font-medium text-slate-600 group-hover:text-slate-900">
+                            Back to Store
+                        </span>
                     </Link>
-                    <div className="flex items-center gap-2 px-3 py-1 bg-white border border-slate-200 rounded-full shadow-sm">
-                        <ShieldCheck size={16} className="text-[#5ecad6]" strokeWidth={2.5} />
-                        <span className="text-[10px] font-bold uppercase tracking-widest text-slate-500 hidden sm:inline">Official Store</span>
+
+                    {/* Desktop Certifications */}
+                    <div className="hidden md:flex items-center gap-3">
+                        {shopData.certifications?.map((cert) => (
+                            <span
+                                key={cert}
+                                className="flex items-center gap-1.5 text-[10px] font-bold px-3 py-1.5 rounded-full border"
+                                style={{
+                                    backgroundColor: THEME.primaryLight,
+                                    borderColor: THEME.primary,
+                                    color: THEME.primaryDark
+                                }}
+                            >
+                                <ShieldCheck size={12} />
+                                {cert}
+                            </span>
+                        ))}
+                    </div>
+
+                    {/* Action Icons */}
+                    <div className="flex items-center gap-2">
+                        <button className="w-10 h-10 rounded-full flex items-center justify-center hover:bg-slate-50 transition-colors">
+                            <Share2 size={18} className="text-slate-500" />
+                        </button>
+                        <button className="w-10 h-10 rounded-full flex items-center justify-center hover:bg-slate-50 transition-colors">
+                            <Heart size={18} className="text-slate-500" />
+                        </button>
                     </div>
                 </div>
             </nav>
 
-            <main className="max-w-360 2xl:max-w-450 mx-auto px-4 sm:px-8 py-8 md:py-16">
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 xl:gap-20">
-                    
-                    {/* LEFT: Image Gallery */}
-                    <div className="lg:col-span-7 xl:col-span-7 lg:sticky lg:top-32 lg:self-start">
-                        <ProductImageGallery src={product.image_url} alt={product.name} discount={discount} />
-                        
-                        {/* Trust Badges */}
-                        <div className="grid grid-cols-3 gap-3 sm:gap-4 mt-6">
-                            {[
-                                { icon: Truck, label: "Delivery", sub: "3-5 Days" },
-                                { icon: Award, label: "Genuine", sub: "100% Original" },
-                                { icon: Clock, label: "Support", sub: "24/7 Experts" }
-                            ].map((badge, idx) => (
-                                <div key={idx} className="flex flex-col items-center text-center p-4 rounded-2xl bg-white border border-slate-100 shadow-sm">
-                                    <badge.icon size={20} className="text-[#5ecad6] mb-2" />
-                                    <span className="text-[9px] font-black uppercase tracking-wider text-slate-900">{badge.label}</span>
-                                    <span className="text-[8px] text-slate-400 mt-0.5">{badge.sub}</span>
+            {/* Breadcrumb */}
+            <div className="max-w-360 mx-auto px-4 sm:px-6 lg:px-8 py-4">
+                <nav className="flex items-center gap-2 text-xs text-slate-400">
+                    <Link href="/" className="hover:text-slate-600 transition-colors">Home</Link>
+                    <ChevronRight size={12} />
+                    <Link href="/shop/supplements" className="hover:text-slate-600 transition-colors">Shop</Link>
+                    <ChevronRight size={12} />
+                    <span className="text-slate-600 font-medium">{product.name}</span>
+                </nav>
+            </div>
+
+            {/* Main Content */}
+            <main className="max-w-360 mx-auto px-4 sm:px-6 lg:px-8 pb-24 lg:pb-14">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 xl:gap-16">
+
+                    {/* Left Column - Images & Specs */}
+                    <div className="lg:col-span-7 xl:col-span-8">
+                        <div className="lg:sticky lg:top-24 space-y-6">
+
+                            {/* Image Gallery */}
+                            <ProductImageGallery
+                                src={product.image_url}
+                                alt={product.name}
+                                discount={discount}
+                                themeColor={THEME.primary}
+                            />
+
+                            {/* Macros Grid */}
+                            <div className="bg-white rounded-2xl border border-slate-100 p-6 shadow-sm">
+                                <h3 className="text-sm font-bold uppercase tracking-wider text-slate-400 mb-4">
+                                    Nutrition Facts <span className="text-xs normal-case font-normal">(per serving)</span>
+                                </h3>
+                                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                                    {Object.entries(product.macros || {}).map(([key, value]) => (
+                                        <div
+                                            key={key}
+                                            className="text-center p-4 rounded-xl transition-colors hover:bg-slate-50"
+                                            style={{ backgroundColor: `${THEME.primary}08` }}
+                                        >
+                                            <p className="text-[10px] font-bold uppercase tracking-widest mb-1" style={{ color: THEME.gray }}>
+                                                {key}
+                                            </p>
+                                            <p className="text-xl font-bold" style={{ color: THEME.dark }}>
+                                                {value}
+                                            </p>
+                                        </div>
+                                    ))}
                                 </div>
-                            ))}
+                            </div>
+
+                            {/* Trust Badges */}
+                            <div className="grid grid-cols-3 gap-4">
+                                {[
+                                    { icon: Truck, label: "Fast Delivery", sub: "2-3 Days" },
+                                    { icon: Award, label: "Premium Quality", sub: "Lab Tested" },
+                                    { icon: Clock, label: "Fresh Stock", sub: "2024 Batch" },
+                                ].map((badge, i) => (
+                                    <div
+                                        key={i}
+                                        className="bg-white border border-slate-100 rounded-xl p-4 flex flex-col items-center text-center hover:border-slate-200 transition-colors"
+                                    >
+                                        <div
+                                            className="w-10 h-10 rounded-full flex items-center justify-center mb-3"
+                                            style={{ backgroundColor: THEME.primaryLight }}
+                                        >
+                                            <badge.icon size={20} style={{ color: THEME.primaryDark }} />
+                                        </div>
+                                        <p className="text-xs font-bold text-slate-900">{badge.label}</p>
+                                        <p className="text-[10px] text-slate-400 mt-0.5">{badge.sub}</p>
+                                    </div>
+                                ))}
+                            </div>
                         </div>
                     </div>
 
-                    {/* RIGHT: Content Section */}
-                    <div className="lg:col-span-5 flex flex-col pt-4">
-                        <p className="text-[#5ecad6] font-bold uppercase tracking-[0.3em] text-[10px] md:text-xs mb-4">
-                            {product.vendor}
-                        </p>
-                        
-                        <h1 className={`${poppins.className} text-3xl xs:text-4xl md:text-5xl 2xl:text-7xl font-bold tracking-tight leading-[1.1] mb-8`}>
-                            {product.name}
-                        </h1>
+                    {/* Right Column - Product Info */}
+                    <div className="lg:col-span-5 xl:col-span-4">
+                        <div className="xl:sticky lg:top-24 space-y-6">
 
-                        <div className="bg-white p-6 sm:p-8 rounded-[2.5rem] border border-slate-100 shadow-sm mb-8">
-                            <div className="flex items-center justify-between mb-6">
-                                <div>
-                                    <div className="flex items-baseline gap-1">
-                                        <span className="text-sm font-semibold text-slate-400 italic">Rs</span>
-                                        <span className="text-4xl 2xl:text-5xl font-bold tracking-tighter">
-                                            {product.sale_price.toLocaleString()}
-                                        </span>
-                                    </div>
-                                    {product.regular_price && (
-                                        <p className="text-sm text-slate-300 line-through">Rs {product.regular_price.toLocaleString()}</p>
-                                    )}
+                            {/* Vendor & Title */}
+                            <div>
+                                <div className="flex items-center gap-2 mb-3">
+                                    <span
+                                        className="w-2 h-2 rounded-full"
+                                        style={{ backgroundColor: THEME.primary }}
+                                    />
+                                    <span
+                                        className="text-xs font-bold uppercase tracking-[0.2em]"
+                                        style={{ color: THEME.primaryDark }}
+                                    >
+                                        {product.vendor}
+                                    </span>
                                 </div>
-                                <div className="text-right">
-                                    <div className="flex items-center justify-end gap-1 mb-1">
-                                        <Star size={16} className="fill-slate-900" strokeWidth={2.5} />
-                                        <span className="text-xl font-black">{product.rating}</span>
+
+                                <h1 className={`${poppins.className} text-3xl sm:text-4xl xl:text-[2.75rem] font-bold leading-[1.1] tracking-tight`}>
+                                    {product.name}
+                                </h1>
+
+                                <p className="mt-4 text-slate-600 leading-relaxed text-sm sm:text-base">
+                                    {product.description}
+                                </p>
+                            </div>
+
+                            {/* Rating Summary */}
+                            <div className="flex items-center gap-4 py-4 border-y border-slate-100">
+                                <div className="flex items-center gap-1">
+                                    {[...Array(5)].map((_, i) => (
+                                        <Star
+                                            key={i}
+                                            size={16}
+                                            className={i < Math.floor(product.rating) ? "fill-yellow-400 text-yellow-400" : "text-slate-200"}
+                                        />
+                                    ))}
+                                </div>
+                                <span className="text-sm font-bold">{product.rating}</span>
+                                <span className="text-sm text-slate-400">({product.reviews} verified reviews)</span>
+                            </div>
+
+                            {/* Price Card */}
+                            <div
+                                className="rounded-2xl p-6 text-white relative overflow-hidden"
+                                style={{ backgroundColor: THEME.dark }}
+                            >
+                                <div className="absolute top-0 right-0 w-32 h-32 opacity-10 rounded-full -mr-10 -mt-10" style={{ backgroundColor: THEME.primary }} />
+
+                                <div className="relative z-10 flex justify-between items-end">
+                                    <div>
+                                        <p className="text-xs uppercase tracking-widest text-white/60 mb-1">Current Price</p>
+                                        <div className="flex items-baseline gap-1">
+                                            <span className="text-lg font-medium text-white/80">USD</span>
+                                            <span className="text-4xl font-bold tracking-tight">
+                                                {product.sale_price.toLocaleString()}
+                                            </span>
+                                        </div>
+                                        {product.regular_price && (
+                                            <div className="flex items-center gap-2 mt-1">
+                                                <span className="text-sm line-through text-white/40">
+                                                    USD {product.regular_price.toLocaleString()}
+                                                </span>
+                                                <span
+                                                    className="text-[10px] font-bold px-2 py-1 rounded-full"
+                                                    style={{ backgroundColor: THEME.primary, color: THEME.dark }}
+                                                >
+                                                    SAVE {discount}%
+                                                </span>
+                                            </div>
+                                        )}
                                     </div>
-                                    <span className="text-[9px] font-black text-slate-400 uppercase tracking-widest block text-nowrap">Quality Verified</span>
+
+                                    <div className="text-right">
+                                        <div
+                                            className="w-12 h-12 rounded-full flex items-center justify-center mb-2"
+                                            style={{ backgroundColor: THEME.primary }}
+                                        >
+                                            <Package size={20} style={{ color: THEME.dark }} />
+                                        </div>
+                                        <p className="text-[10px] text-white/60">In Stock</p>
+                                    </div>
                                 </div>
                             </div>
 
-                            <div className="grid grid-cols-2 gap-4">
-                                <div className="bg-slate-50 p-4 rounded-2xl flex items-center gap-3">
-                                    <Package size={18} className="text-[#5ecad6]" />
-                                    <div>
-                                        <p className="text-[9px] font-bold text-slate-400 uppercase">Protein</p>
-                                        <p className="text-sm font-bold">{product.protein_per_serving}</p>
-                                    </div>
-                                </div>
-                                <div className="bg-slate-50 p-4 rounded-2xl flex items-center gap-3">
-                                    <ShieldCheck size={18} className="text-[#5ecad6]" />
-                                    <div>
-                                        <p className="text-[9px] font-bold text-slate-400 uppercase">DRAP</p>
-                                        <p className="text-sm font-bold tracking-tight">Registered</p>
-                                    </div>
+                            {/* Benefits */}
+                            <div className="bg-white rounded-2xl border border-slate-100 p-6 shadow-sm">
+                                <h3 className="text-sm font-bold uppercase tracking-wider text-slate-400 mb-4">
+                                    Key Benefits
+                                </h3>
+                                <div className="space-y-3">
+                                    {product.benefits?.map((benefit, i) => (
+                                        <div key={i} className="flex items-start gap-3">
+                                            <div
+                                                className="w-5 h-5 rounded-full flex items-center justify-center shrink-0 mt-0.5"
+                                                style={{ backgroundColor: THEME.primaryLight }}
+                                            >
+                                                <CheckCircle2 size={12} style={{ color: THEME.primaryDark }} />
+                                            </div>
+                                            <span className="text-sm text-slate-600 leading-relaxed">{benefit}</span>
+                                        </div>
+                                    ))}
                                 </div>
                             </div>
-                        </div>
 
-                        {/* Benefits Checklist */}
-                        <div className="space-y-3 mb-12">
-                            <h3 className="text-[11px] font-black uppercase tracking-[0.2em] text-slate-400 mb-6 italic">Performance Targets</h3>
-                            {product.benefits?.map((benefit, i) => (
-                                <div key={i} className="flex items-center gap-3 p-3 rounded-xl bg-white border border-slate-50 hover:border-slate-100 transition-colors">
-                                    <div className="w-5 h-5 rounded-full bg-emerald-50 flex items-center justify-center">
-                                        <CheckCircle2 size={12} className="text-emerald-600" strokeWidth={3} />
-                                    </div>
-                                    <span className="text-sm font-semibold text-slate-600 tracking-tight">{benefit}</span>
-                                </div>
-                            ))}
-                        </div>
+                            {/* Desktop CTA */}
+                            <div className="hidden lg:block space-y-3">
+                                <button
+                                    className="w-full h-14 rounded-xl font-bold text-sm uppercase tracking-wider flex items-center justify-center gap-3 transition-all hover:opacity-90 hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0"
+                                    style={{ backgroundColor: THEME.dark, color: "white" }}
+                                >
+                                    <ShoppingCart size={20} />
+                                    Add to Cart
+                                </button>
 
-                        {/* Actions: Responsive Sticky */}
-                        <div className="fixed bottom-0 left-0 right-0 p-4 bg-white/80 backdrop-blur-xl border-t border-slate-100 lg:static lg:bg-transparent lg:p-0 lg:border-none z-50">
-                            <div className="max-w-7xl mx-auto flex gap-4">
-                                <button className="flex-3 bg-slate-900 text-white h-16 rounded-2xl font-black uppercase text-xs sm:text-sm flex items-center justify-center gap-3 hover:bg-black transition-all shadow-xl shadow-slate-900/10 active:scale-95 group">
-                                    <ShoppingCart size={20} className="group-hover:scale-110 transition-transform" />
-                                    Add to Performance Stack
+                                <button
+                                    className="w-full h-14 rounded-xl font-bold text-sm uppercase tracking-wider flex items-center justify-center gap-3 border-2 transition-all hover:bg-slate-50"
+                                    style={{ borderColor: THEME.primary, color: THEME.primaryDark }}
+                                >
+                                    <CreditCard size={20} />
+                                    Buy Now
                                 </button>
-                                <button className="hidden sm:flex flex-1 bg-white border border-slate-200 text-slate-900 h-16 rounded-2xl font-bold text-sm items-center justify-center hover:bg-slate-50 transition-all">
-                                    Compare
-                                </button>
+
+                                <p className="text-center text-xs text-slate-400 pt-2">
+                                    Free shipping on orders over Rs 5,000 • 30-day returns
+                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                {/* Related Section */}
-                <section className="mt-32 pt-24 border-t border-slate-200">
-                    <div className="flex items-end justify-between mb-16">
+                {/* Related Products Section */}
+                <section className="mt-20 lg:mt-32">
+                    <div className="flex items-center justify-between mb-8">
                         <div>
-                            <p className="text-[#5ecad6] font-bold uppercase tracking-[0.2em] text-[11px] mb-2">Build Your Stack</p>
-                            <h2 className={`${poppins.className} text-3xl 2xl:text-4xl font-bold tracking-tight text-slate-900 uppercase`}>More to Explore</h2>
+                            <span
+                                className="text-xs font-bold uppercase tracking-[0.2em] mb-2 block"
+                                style={{ color: THEME.primaryDark }}
+                            >
+                                You May Also Like
+                            </span>
+                            <h2 className={`${poppins.className} text-2xl sm:text-3xl font-bold`}>
+                                Related Products
+                            </h2>
                         </div>
-                        <Link href="/" className="group flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-slate-400 hover:text-black transition-all">
-                            View Collection <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                        <Link
+                            href="/shop"
+                            className="hidden sm:flex items-center gap-1 text-sm font-semibold hover:gap-2 transition-all"
+                            style={{ color: THEME.primaryDark }}
+                        >
+                            View All <ChevronRight size={16} />
                         </Link>
                     </div>
 
-                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 xl:gap-10">
+                    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
                         {relatedProducts.map((item) => (
-                            <Link key={item.id} href={`/product/${item.id}`} className="group block">
-                                <div className="aspect-square bg-white rounded-[2.5rem] border border-slate-100 mb-6 flex items-center justify-center p-8 transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-slate-200/50 group-hover:-translate-y-1">
-                                    <Image src={item.image_url} alt={item.name} width={250} height={250} className="object-contain mix-blend-multiply" />
+                            <Link
+                                key={item.id}
+                                href={`/product/${item.id}`}
+                                className="group bg-white rounded-2xl border border-slate-100 overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+                            >
+                                <div className="aspect-square p-6 flex items-center justify-center bg-slate-50/50 relative">
+                                    <Image
+                                        src={item.image_url}
+                                        alt={item.name}
+                                        width={200}
+                                        height={200}
+                                        className="object-contain group-hover:scale-110 transition-transform duration-500"
+                                    />
+                                    {item.regular_price && (
+                                        <span
+                                            className="absolute top-3 left-3 text-[10px] font-bold px-2 py-1 rounded-full"
+                                            style={{ backgroundColor: THEME.primary, color: THEME.dark }}
+                                        >
+                                            {Math.round(((item.regular_price - item.sale_price) / item.regular_price) * 100)}% OFF
+                                        </span>
+                                    )}
                                 </div>
-                                <h4 className={`${poppins.className} text-sm font-bold text-slate-900 mb-1 line-clamp-1`}>{item.name}</h4>
-                                <p className="text-sm font-bold text-[#5ecad6] italic tracking-tight">Rs {item.sale_price.toLocaleString()}</p>
+                                <div className="p-4">
+                                    <p className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">
+                                        {item.vendor}
+                                    </p>
+                                    <h3 className="font-semibold text-slate-900 line-clamp-1 mb-2 group-hover:text-slate-600 transition-colors">
+                                        {item.name}
+                                    </h3>
+                                    <div className="flex items-center justify-between">
+                                        <span className="font-bold text-lg">
+                                            USD {item.sale_price.toLocaleString()}
+                                        </span>
+                                        {item.regular_price && (
+                                            <span className="text-xs text-slate-400 line-through">
+                                                Rs {item.regular_price.toLocaleString()}
+                                            </span>
+                                        )}
+                                    </div>
+                                </div>
                             </Link>
                         ))}
                     </div>
                 </section>
             </main>
+
+            {/* Mobile Sticky CTA */}
+            <div className="lg:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-slate-200 p-4 flex gap-3 z-50 safe-area-pb">
+                <button
+                    className="flex-1 h-12 rounded-xl font-bold text-sm uppercase tracking-wider flex items-center justify-center gap-2 text-white"
+                    style={{ backgroundColor: THEME.dark }}
+                >
+                    <ShoppingCart size={18} />
+                    Add to Cart
+                </button>
+                <button
+                    className="w-12 h-12 rounded-xl flex items-center justify-center border-2"
+                    style={{ borderColor: THEME.primary }}
+                >
+                    <Heart size={18} style={{ color: THEME.primaryDark }} />
+                </button>
+            </div>
         </div>
     );
 }

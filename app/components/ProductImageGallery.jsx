@@ -3,6 +3,18 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import Image from "next/image";
 import { X, ZoomIn, Zap } from "lucide-react";
+import { Poppins, Inter } from "next/font/google";
+
+const poppins = Poppins({
+    weight: ["400", "500", "600", "700"],
+    subsets: ["latin"],
+    variable: "--font-poppins",
+});
+const inter = Inter({
+    subsets: ["latin"],
+    variable: "--font-inter",
+});
+
 
 export default function ProductImageGallery({ src, alt, discount }) {
     const [isFullScreen, setIsFullScreen] = useState(false);
@@ -25,7 +37,7 @@ export default function ProductImageGallery({ src, alt, discount }) {
     return (
         <>
             <div
-                className="group relative aspect-square bg-white rounded-[2.5rem] md:rounded-[3.5rem]  border border-slate-100 overflow-hidden cursor-zoom-in shadow-sm hover:shadow-2xl transition-all duration-700"
+                className="group relative aspect-square bg-white rounded-lg md:rounded-lg border border-gray-100 overflow-hidden cursor-zoom-in "
                 onClick={() => setIsFullScreen(true)}
             >
                 {/* Visual Polish */}
@@ -37,7 +49,7 @@ export default function ProductImageGallery({ src, alt, discount }) {
                     fill
                     priority
                     sizes="(max-width: 1024px) 100vw, 50vw"
-                    className="object-contain p-8 md:p-16 mix-blend-multiply transition-transform duration-1000 group-hover:scale-105"
+                    className="object-cover p-8 md:p-16 mix-blend-multiply transition-transform duration-1000 group-hover:scale-105"
                 />
 
                 {/* Hover UI */}
@@ -48,7 +60,7 @@ export default function ProductImageGallery({ src, alt, discount }) {
                 </div>
 
                 {discount && (
-                    <div className="absolute top-8 left-8 z-20 bg-slate-900 text-white text-[10px] font-black px-4 py-2 rounded-full shadow-2xl flex items-center gap-2 tracking-widest uppercase">
+                    <div className={`absolute top-8 left-8 z-20 bg-slate-900 text-white text-[10px] font-semibold px-4 py-2 rounded-full shadow-2xl flex items-center gap-2 tracking-widest uppercase ${inter.className}`}>
                         <Zap size={12} fill="#5ecad6" className="text-[#5ecad6]" />
                         SAVE {discount}%
                     </div>
@@ -58,14 +70,14 @@ export default function ProductImageGallery({ src, alt, discount }) {
             {/* Professional Fullscreen Modal */}
             {isFullScreen && (
                 <div
-                    className="fixed inset-0 z-999 bg-white/98 backdrop-blur-xl flex items-center justify-center p-4 md:p-12 animate-in fade-in duration-300"
+                    className="fixed inset-0 z-999 h-screen bg-white backdrop-blur-xl flex items-center justify-center p-4 md:p-12 animate-in fade-in duration-300"
                     onClick={() => setIsFullScreen(false)}
                 >
                     <button
-                        className="absolute top-6 right-6 md:top-12 md:right-12 p-4 bg-slate-100/80 hover:bg-slate-900 hover:text-white backdrop-blur-md rounded-full transition-all duration-300 z-1010 group"
+                        className="absolute top-6 right-6 md:top-12 md:right-12 p-2 text-gray-800 border border-gray-200 backdrop-blur-md rounded-lg transition-all duration-300 z-1010 group"
                         onClick={(e) => { e.stopPropagation(); setIsFullScreen(false); }}
                     >
-                        <X size={28} className="group-hover:rotate-90 transition-transform duration-300" />
+                        <X size={24} className="group-hover:rotate-90 transition-transform duration-300" />
                     </button>
 
                     <div className="relative  w-full h-full max-w-6xl animate-in zoom-in-95 duration-300 ease-out">
@@ -77,9 +89,7 @@ export default function ProductImageGallery({ src, alt, discount }) {
                         />
                     </div>
 
-                    <p className="absolute bottom-8 text-slate-300 font-bold uppercase tracking-[0.4em] text-[10px] pointer-events-none">
-                        Official High-Res View
-                    </p>
+                   
                 </div>
             )}
         </>

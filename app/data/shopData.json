@@ -1,9 +1,17 @@
 {
   "store_name": "Prime Supps",
   "location": "Pakistan",
-  "certifications": ["DRAP Registered", "GMP Certified"],
-  "delivery_info": "3–5 Working Days",
-  "payment_offers": "Extra discount on Debit/Credit Card",
+  "certifications": [
+    "DRAP Registered",
+    "GMP Certified",
+    "ISO 9001 Certified"
+  ],
+  "delivery_info": {
+    "timeline": "3–5 Working Days",
+    "carrier": "TCS / Leopard",
+    "shipping_fee": "Free on orders over Rs. 10,000"
+  },
+  "payment_offers": "Extra discount on Debit/Credit Card (UBL, HBL, Meezan)",
   "products": [
     {
       "id": "ps-7214",
@@ -14,7 +22,19 @@
       "regular_price": 39950.0,
       "rating": 4.6,
       "reviews": 47,
+      "stock_status": "In Stock",
+      "weight": "2.27kg / 5lbs",
+      "servings": 65,
+      "flavors": ["Double Chocolate", "Vanilla Ice Cream", "Cookies & Cream"],
       "benefits": ["Muscle Repair", "Growth", "Enhanced Recovery"],
+      "macros": {
+        "calories": "142 kcal",
+        "carbs": "1.2g",
+        "fats": "0.5g",
+        "sugar": "0g"
+      },
+      "description": "Ultra-filtered Hydrolyzed Whey Protein for the fastest possible absorption. Zero sugar, zero lactose, and fortified with BCAAs.",
+      "usage": "Mix 1 scoop with 250ml water. Consume post-workout or first thing in the morning.",
       "image_url": "https://res.cloudinary.com/dlurrugno/image/upload/v1770021121/HYDRO-whey-zero-pp_py5u5d.webp"
     },
     {
@@ -25,7 +45,20 @@
       "sale_price": 29160.0,
       "regular_price": 36450.0,
       "rating": 4.8,
+      "reviews": 32,
+      "stock_status": "Low Stock",
+      "weight": "2kg / 4.4lbs",
+      "servings": 40,
+      "flavors": ["Milk Chocolate", "Strawberry"],
       "benefits": ["Enhanced Recovery", "Boost Metabolism", "Body Efficiency"],
+      "macros": {
+        "calories": "190 kcal",
+        "carbs": "3g",
+        "fats": "1.8g",
+        "sugar": "1g"
+      },
+      "description": "A high-protein formula combined with L-Carnitine and Green Tea extract to support muscle definition and fat metabolism.",
+      "usage": "1.5 scoops with 300ml cold water. Ideal for lean bulking phases.",
       "image_url": "https://res.cloudinary.com/dlurrugno/image/upload/v1770021162/B_2_078cf910-1376-409c-afa7-6a780db0e987_exwzpi.webp"
     },
     {
@@ -36,7 +69,20 @@
       "sale_price": 19305.0,
       "regular_price": 21450.0,
       "rating": 5.0,
-      "benefits": ["Builds Muscle", "Support Muscle Recovery"],
+      "reviews": 128,
+      "stock_status": "In Stock",
+      "weight": "2.27kg / 5lbs",
+      "servings": 48,
+      "flavors": ["Chocolate Peanut Butter", "Strawberry Milkshake"],
+      "benefits": ["Builds Muscle", "Support Muscle Recovery", "Incredible Taste"],
+      "macros": {
+        "calories": "200 kcal",
+        "carbs": "15g",
+        "fats": "6g",
+        "sugar": "2g"
+      },
+      "description": "An ultra-premium lean muscle protein powder. It provides a multi-functional protein matrix for a sustained release of nutrients.",
+      "usage": "Take 1 scoop anytime you need a high-quality protein boost or a meal replacement.",
       "image_url": "https://res.cloudinary.com/dlurrugno/image/upload/v1769784553/SYntha6_lrbx7i.png"
     },
     {
@@ -47,7 +93,20 @@
       "sale_price": 28305.0,
       "regular_price": 31450.0,
       "rating": 4.7,
-      "benefits": ["Muscle Repair", "Boost Metabolism", "Body Efficiency"],
+      "reviews": 85,
+      "stock_status": "In Stock",
+      "weight": "2kg / 4.4lbs",
+      "servings": 66,
+      "flavors": ["Chocolate", "Banana-Peach"],
+      "benefits": ["Muscle Repair", "Boost Metabolism", "Anabolic Support"],
+      "macros": {
+        "calories": "113 kcal",
+        "carbs": "0.9g",
+        "fats": "0.8g",
+        "sugar": "0.5g"
+      },
+      "description": "Fortified with Creatine and DAA, this isolate is designed for professional athletes looking for maximum anabolism.",
+      "usage": "Mix 1 scoop with 200ml water immediately after training.",
       "image_url": "https://res.cloudinary.com/dlurrugno/image/upload/v1770021259/anabolic-iso-whey-2-kg-68f625476f9fd_5caede13-1feb-476a-ae42-4fab290d4d9f_eqf7ti.webp"
     },
     {
@@ -58,18 +117,44 @@
       "sale_price": 23355.0,
       "regular_price": 25950.0,
       "rating": 5.0,
+      "reviews": 41,
+      "stock_status": "In Stock",
+      "weight": "2kg",
+      "servings": 60,
+      "flavors": ["White Chocolate Coconut", "Chocolate-Bun"],
       "benefits": ["Boost Metabolism", "Muscle Repair", "Growth"],
+      "macros": {
+        "calories": "120 kcal",
+        "carbs": "1.5g",
+        "fats": "1g",
+        "sugar": "1g"
+      },
+      "description": "Hydrolyzed Whey Protein with added Bee Pollen and Royal Jelly for superior nutrient density and recovery.",
+      "usage": "1 scoop with 250ml skimmed milk or water as a mid-day snack.",
       "image_url": "https://res.cloudinary.com/dlurrugno/image/upload/v1770021316/anabolicprimepro-68f62ad26eba9_gzdb9g.webp"
     },
     {
       "id": "ps-8843",
       "vendor": "Jacked Nutrition",
-      "name": "ISO JACKED WHEY PROTEIN - ULTRA-PREMIUM",
+      "name": "ISO JACKED WHEY PROTEIN",
       "protein_per_serving": "27g",
       "sale_price": 495.0,
       "regular_price": 550.0,
       "rating": 4.5,
+      "reviews": 12,
+      "stock_status": "In Stock",
+      "weight": "Sachet Sample",
+      "servings": 1,
+      "flavors": ["Chocolate"],
       "benefits": ["Fuel Workouts", "Builds Muscle", "Enhanced Performance"],
+      "macros": {
+        "calories": "110 kcal",
+        "carbs": "1g",
+        "fats": "0g",
+        "sugar": "0g"
+      },
+      "description": "Ultra-premium sachet for testing the quality and taste of Pakistan's favorite isolate.",
+      "usage": "Mix the entire sachet with 200ml water.",
       "image_url": "https://res.cloudinary.com/dlurrugno/image/upload/v1770021379/IsoJacked5lbs_id7m9k.webp"
     },
     {
@@ -80,7 +165,20 @@
       "sale_price": 5560.0,
       "regular_price": 6950.0,
       "rating": 4.7,
+      "reviews": 19,
+      "stock_status": "In Stock",
+      "weight": "1kg",
+      "servings": 33,
+      "flavors": ["Unflavored", "Vanilla"],
       "benefits": ["Vegan Friendly", "Muscle Recovery", "Performance"],
+      "macros": {
+        "calories": "105 kcal",
+        "carbs": "2g",
+        "fats": "1g",
+        "sugar": "0g"
+      },
+      "description": "Plant-based protein source ideal for vegetarians and those with dairy allergies.",
+      "usage": "Add 1 scoop to smoothies or oatmeal.",
       "image_url": "https://res.cloudinary.com/dlurrugno/image/upload/v1770021415/1_61e8463a-640c-446f-8cd1-598f2c0d4f36_bdnxpq.webp"
     },
     {
@@ -91,18 +189,44 @@
       "sale_price": 19305.0,
       "regular_price": 21450.0,
       "rating": 4.8,
+      "reviews": 210,
+      "stock_status": "In Stock",
+      "weight": "2.27kg / 5lbs",
+      "servings": 71,
+      "flavors": ["Gourmet Chocolate", "Fudge Brownie"],
       "benefits": ["Muscle Repair", "Recovery", "Builds Muscle"],
+      "macros": {
+        "calories": "110 kcal",
+        "carbs": "1g",
+        "fats": "0.5g",
+        "sugar": "0g"
+      },
+      "description": "World-renowned hydrolyzed whey isolate. Recognized for quality, purity, and fast digestion.",
+      "usage": "1 scoop after waking up and 1 scoop post-workout.",
       "image_url": "https://res.cloudinary.com/dlurrugno/image/upload/v1770021446/dymatizeiso100_rwzfhj.webp"
     },
     {
       "id": "ps-4432",
       "vendor": "DY Nutrition",
-      "name": "SHADOWHEY HYDROLYSATE WHEY PROTEIN",
+      "name": "SHADOWHEY HYDROLYSATE",
       "protein_per_serving": "25g",
       "sale_price": 31960.0,
       "regular_price": 39950.0,
       "rating": 4.7,
+      "reviews": 38,
+      "stock_status": "In Stock",
+      "weight": "2kg",
+      "servings": 66,
+      "flavors": ["Pistachio", "Chocolate"],
       "benefits": ["Rapid Absorption", "Muscle Repair", "Growth"],
+      "macros": {
+        "calories": "115 kcal",
+        "carbs": "1.1g",
+        "fats": "0.9g",
+        "sugar": "0.1g"
+      },
+      "description": "Formulated by Dorian Yates, this hydrolysate is meant for extreme tissue repair and growth.",
+      "usage": "1.5 scoops with 250ml water for a dense protein shake.",
       "image_url": "https://res.cloudinary.com/dlurrugno/image/upload/v1770021478/dy_nutrition_shadowhey_hydrolysate_whey_protein_mb7jz1.webp"
     },
     {
@@ -113,7 +237,20 @@
       "sale_price": 30555.0,
       "regular_price": 33950.0,
       "rating": 4.5,
+      "reviews": 56,
+      "stock_status": "In Stock",
+      "weight": "2.27kg / 5lbs",
+      "servings": 69,
+      "flavors": ["Cookies and Cream", "Vanilla Biscuit"],
       "benefits": ["Muscle Repair", "Growth", "Enhanced Recovery"],
+      "macros": {
+        "calories": "120 kcal",
+        "carbs": "2g",
+        "fats": "1g",
+        "sugar": "1g"
+      },
+      "description": "Pure Whey Isolate with ChromaDex Quality Verification for verified purity.",
+      "usage": "1 scoop post-workout.",
       "image_url": "https://res.cloudinary.com/dlurrugno/image/upload/v1770021528/BPISportsISOHD5lbs_rr2hkb.webp"
     },
     {
@@ -124,7 +261,20 @@
       "sale_price": 22905.0,
       "regular_price": 25450.0,
       "rating": 4.9,
+      "reviews": 74,
+      "stock_status": "In Stock",
+      "weight": "2kg",
+      "servings": 50,
+      "flavors": ["Milk & Cookies"],
       "benefits": ["Fuel Workouts", "Builds Muscle", "Performance"],
+      "macros": {
+        "calories": "150 kcal",
+        "carbs": "4g",
+        "fats": "3g",
+        "sugar": "2g"
+      },
+      "description": "Ultra-premium whey protein blend with digestive enzymes for maximum bioavailability.",
+      "usage": "1 scoop anytime as a snack or post-workout.",
       "image_url": "https://res.cloudinary.com/dlurrugno/image/upload/v1770021555/BPI_Sports_whey_HD_CHocolate_cookie_5lbs_fazv8s.webp"
     },
     {
@@ -135,52 +285,21 @@
       "sale_price": 15960.0,
       "regular_price": 19950.0,
       "rating": 4.6,
+      "reviews": 29,
+      "stock_status": "In Stock",
+      "weight": "2.27kg",
+      "servings": 75,
+      "flavors": ["Milk Chocolate"],
       "benefits": ["Builds Muscle", "Support Muscle Recovery"],
+      "macros": {
+        "calories": "140 kcal",
+        "carbs": "2.5g",
+        "fats": "2g",
+        "sugar": "1.5g"
+      },
+      "description": "Budget-friendly whey concentrate and isolate blend for daily muscle support.",
+      "usage": "1 scoop with water or milk.",
       "image_url": "https://res.cloudinary.com/dlurrugno/image/upload/v1770021583/Superior-Whey-Core-Chocolate-2270gENHANCED_srzl9t.webp"
-    },
-    {
-      "id": "ps-8120",
-      "vendor": "Superior14",
-      "name": "HYDRO WHEY ZERO PROTEIN POWDER",
-      "protein_per_serving": "34g",
-      "sale_price": 19960.0,
-      "regular_price": 24950.0,
-      "rating": 4.6,
-      "benefits": ["Enhanced Recovery", "Growth"],
-      "image_url": "https://res.cloudinary.com/dlurrugno/image/upload/v1770021777/HYDRO-whey-zero-pp_jenrsn.webp"
-    },
-    {
-      "id": "ps-4763",
-      "vendor": "Superior14",
-      "name": "ISO PRO",
-      "protein_per_serving": "30g",
-      "sale_price": 17160.0,
-      "regular_price": 21450.0,
-      "rating": 4.9,
-      "benefits": ["Builds Muscle", "Muscle Repair", "Growth"],
-      "image_url": "https://res.cloudinary.com/dlurrugno/image/upload/v1770021808/Superior14ISOPROWheyProteinIsolate_tsjx91.webp"
-    },
-    {
-      "id": "ps-6319",
-      "vendor": "Superior14",
-      "name": "ISO DEFINITION",
-      "protein_per_serving": "30g",
-      "sale_price": 17960.0,
-      "regular_price": 22450.0,
-      "rating": 5.0,
-      "benefits": ["Builds Muscle", "Muscle Repair", "Growth"],
-      "image_url": "https://res.cloudinary.com/dlurrugno/image/upload/v1770021836/2.Superior-Iso-Definition-Chocolate--2270g....ENHANCED_zlirlq.webp"
-    },
-    {
-      "id": "ps-5022",
-      "vendor": "Ultimate Nutrition",
-      "name": "Prostar 100% Whey Protein",
-      "protein_per_serving": "30g",
-      "sale_price": 28305.0,
-      "regular_price": 31450.0,
-      "rating": 4.0,
-      "benefits": ["Muscle Repair", "Growth", "Enhanced Recovery"],
-      "image_url": "https://res.cloudinary.com/dlurrugno/image/upload/v1770021885/1_c813d798-1975-4254-a6f0-cf373f583c7c_ar5bcq.webp"
     },
     {
       "id": "ps-2774",
@@ -190,7 +309,20 @@
       "sale_price": 14805.0,
       "regular_price": 16450.0,
       "rating": 4.4,
+      "reviews": 63,
+      "stock_status": "In Stock",
+      "weight": "1.8kg / 4lbs",
+      "servings": 56,
+      "flavors": ["Chocolate", "Cherry Vanilla"],
       "benefits": ["Muscle Repair", "Growth", "Dairy Free"],
+      "macros": {
+        "calories": "120 kcal",
+        "carbs": "0g",
+        "fats": "0g",
+        "sugar": "0g"
+      },
+      "description": "Isolated beef protein. 350% more concentrated than steak. Lactose, Sugar, and Fat-free.",
+      "usage": "1 scoop with cold water.",
       "image_url": "https://res.cloudinary.com/dlurrugno/image/upload/v1770021908/car123_bn6qma.webp"
     }
   ]
