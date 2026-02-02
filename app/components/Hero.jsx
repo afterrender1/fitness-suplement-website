@@ -25,7 +25,7 @@ export default function Hero() {
                     alt="Premium Supplements"
                     fill
                     priority
-                    className="object-cover opacity-80 object-center block sm:hidden"
+                    className="object-cover opacity-80 object-bottom-left block sm:hidden"
                 />
                 {/* Small Tablets */}
                 <Image
