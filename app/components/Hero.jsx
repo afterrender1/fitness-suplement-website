@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import { ArrowRight, Star, ShieldCheck } from "lucide-react";
 import Link from "next/link";
@@ -11,16 +13,13 @@ const poppins = Poppins({
     variable: "--font-poppins"
 });
 
-
 export default function Hero() {
     return (
-        <section className="relative w-full h-[95vh] flex items-center overflow-hidden bg-black">
+        <section className="relative w-full h-[85vh] sm:h-[90vh] md:h-[95vh] flex items-center overflow-hidden bg-black">
 
-            {/* Background with Intelligent Gradient Mask */}
-            {/* Background with Intelligent Gradient Mask */}
+            {/* Background Images */}
             <div className="absolute inset-0 z-0">
-
-                {/* XS (mobile) */}
+                {/* Mobile */}
                 <Image
                     src="/images/h-mobile.jpg"
                     alt="Premium Supplements"
@@ -28,8 +27,7 @@ export default function Hero() {
                     priority
                     className="object-cover opacity-80 object-center block sm:hidden"
                 />
-
-                {/* SM (small tablets) */}
+                {/* Small Tablets */}
                 <Image
                     src="/images/h-mobile.jpg"
                     alt="Premium Supplements"
@@ -37,8 +35,7 @@ export default function Hero() {
                     priority
                     className="object-cover opacity-80 hidden sm:block md:hidden"
                 />
-
-                {/* MD & up (desktop) */}
+                {/* Desktop */}
                 <Image
                     src="/images/h1.jpg"
                     alt="Premium Supplements"
@@ -47,75 +44,66 @@ export default function Hero() {
                     className="object-cover object-right md:object-center opacity-80 hidden md:block"
                 />
 
-                {/* Gradient overlays (same for all) */}
+                {/* Gradient overlays */}
                 <div className="absolute inset-0 bg-linear-to-r from-black via-black/60 to-transparent" />
                 <div className="absolute inset-0 bg-linear-to-t from-black via-transparent to-transparent" />
-
             </div>
 
+            {/* Content */}
+            <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+                <div className="max-w-xl mt-5 sm:mt-10">
 
-            <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
-                <div className="max-w-2xl mt-5">
-
-                    <h1 className={`text-5xl md:text-7xl font-semibold  text-white leading-[1.1] tracking-tighter mb-6 ${poppins.className}`}>
+                    {/* Heading */}
+                    <h1
+                        className={`${poppins.className} text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold text-white leading-snug sm:leading-[1.1] tracking-tight mb-4 sm:mb-6`}
+                    >
                         EVOLVE YOUR <br />
                         <span className="text-transparent bg-clip-text bg-linear-to-r from-[#93D2D9] to-[#6ed5e0]">
                             PERFORMANCE
                         </span>
                     </h1>
 
-                    {/* Subtext - Improved readability with width constraint */}
-                    <p className={`text-lg md:text-xl text-gray-400 mb-10 leading-relaxed max-w-lg ${inter.className}`}>
+                    {/* Subtext */}
+                    <p
+                        className={`${inter.className} text-sm sm:text-base md:text-lg text-gray-400 mb-6 sm:mb-10 leading-relaxed max-w-md`}
+                    >
                         Science-backed formulas designed for those who refuse to settle.
                         Pure ingredients. Maximum bio-availability. No fillers.
                     </p>
 
-                    {/* Action Area */}
-                    <div className={`flex flex-col sm:flex-row gap-4 mb-12 items-start sm:items-center ${inter.className}`}>
-                        <div className="relative group">
-                            <Link
-                                href="/shop/supplements"
-                                className="flex items-center justify-center gap-3 bg-[#93D2D9] text-black px-10 py-4 rounded-xl font-semibold uppercase tracking-wider hover:bg-white transition-all duration-300 shadow-lg shadow-[#93D2D9]/25 hover:shadow-white/20"
-                            >
-                                Pick Supplements
-                                <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-                            </Link>
+                    {/* Action Buttons */}
+                    <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8 sm:mb-12 items-start sm:items-center">
+                        <Link
+                            href="/shop/supplements"
+                            className="flex items-center justify-center gap-2 sm:gap-3 bg-[#93D2D9] text-black px-6 sm:px-10 py-3 sm:py-4 rounded-xl font-semibold uppercase tracking-wider hover:bg-white transition-all duration-300 shadow-lg shadow-[#93D2D9]/25"
+                        >
+                            Pick Supplements
+                            <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                        </Link>
 
-                            {/* Professional Offer Tag with Arrow */}
-                            <div className="animate-pulse absolute -bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center">
-                                {/* Upward pointing arrow/caret */}
-                                <div className="w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-b-[6px] border-b-slate-900 drop-shadow-sm"></div>
-
-                                <div className={`bg-green-800 text-white text-[11px] font-bold px-4 py-1.5 rounded-sm shadow-lg border border-slate-800 uppercase tracking-widest whitespace-nowrap `}>
-                                    Save 50% Today
-                                </div>
-                            </div>
-                        </div>
-
-                        <button className="flex items-center justify-center gap-2 bg-white/5 backdrop-blur-md border uppercase border-white/10 text-white px-10 py-4 rounded-xl font-semibold hover:bg-white/10 transition-all sm:mt-0 mt-6">
+                        <button className="flex items-center justify-center gap-2 bg-white/10 backdrop-blur-md border border-white/10 text-white px-6 sm:px-10 py-3 sm:py-4 rounded-xl font-semibold hover:bg-white/20 transition-all mt-3 sm:mt-0">
                             GYM Enrollment
                         </button>
                     </div>
 
-                    {/* Trust Badges - Minimalist Style */}
-                    <div className={`grid grid-cols-2 md:flex gap-8 border-t border-white/10 pt-8 ${inter.className}`}>
-                        <div className="flex items-center gap-2 text-white/50">
-                            <ShieldCheck size={20} className="text-[#93D2D9]" />
-                            <span className="text-[10px] font-bold uppercase tracking-wider">Third-Party Tested</span>
+                    {/* Trust Badges */}
+                    <div className="grid grid-cols-2 md:flex gap-6 sm:gap-8 border-t border-white/10 pt-4 sm:pt-6">
+                        <div className="flex items-center gap-2 text-white/60">
+                            <ShieldCheck size={16} className="text-[#93D2D9]" />
+                            <span className="text-[9px] sm:text-[10px] font-bold uppercase tracking-wider">Third-Party Tested</span>
                         </div>
-                        <div className="flex items-center gap-2 text-white/50">
-                            <Star size={20} className="text-[#93D2D9]" />
-                            <span className="text-[10px] font-bold uppercase tracking-wider">5-Star Rated</span>
+                        <div className="flex items-center gap-2 text-white/60">
+                            <Star size={16} className="text-[#93D2D9]" />
+                            <span className="text-[9px] sm:text-[10px] font-bold uppercase tracking-wider">5-Star Rated</span>
                         </div>
                     </div>
-
                 </div>
             </div>
 
-            {/* Aesthetic Side Element (Desktop Only) */}
-            <div className={`hidden lg:block absolute right-12 bottom-12`}>
+            {/* Decorative Side Text (Desktop Only) */}
+            <div className="hidden lg:block absolute right-6 bottom-6">
                 <div className="rotate-90 origin-right">
-                    <p className="text-[10px] font-bold tracking-[0.5em] text-white/20 uppercase">
+                    <p className="text-[9px] sm:text-[10px] font-bold tracking-[0.4em] text-white/20 uppercase">
                         Est. MMXXIV — High Performance Nutrition
                     </p>
                 </div>
