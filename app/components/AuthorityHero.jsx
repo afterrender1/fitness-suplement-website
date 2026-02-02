@@ -12,29 +12,31 @@ const poppins = Poppins({ subsets: ["latin"], weight: ["300", "700"] });
 export const AuthorityHero = () => {
     const { scrollYProgress } = useScroll();
 
-    // Parallax effects
-    const scale = useTransform(scrollYProgress, [0, 0.25], [1, 0.95]);
+    const scale = useTransform(scrollYProgress, [0, 0.25], [1, 0.96]);
     const opacity = useTransform(scrollYProgress, [0, 0.3], [1, 0]);
     const y = useTransform(scrollYProgress, [0, 0.3], [0, -40]);
 
     return (
-        <section className="relative h-full w-full bg-black overflow-hidden flex items-center  rounded-2xl">
+        <section className="relative w-full bg-black overflow-hidden rounded-2xl">
             {/* Background Glow */}
             <div className="absolute -top-40 -right-40 w-160 h-160 bg-[#93D2D9]/10 blur-[160px] rounded-full" />
 
             <motion.div
                 style={{ scale, opacity, y }}
-                className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-8 py-20 md:py-28"
+                className="relative z-10 max-w-7xl mx-auto
+        px-4 sm:px-6 lg:px-8
+        py-16 sm:py-20 md:py-24 lg:py-28"
             >
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
-                    {/* LEFT CONTENT */}
+                    {/* LEFT */}
                     <div className="max-w-xl">
-                        {/* Badge */}
-                   
-
-                        {/* Heading - Reduced 2xl size for better balance */}
-                        <h2 className={`${poppins.className} text-4xl sm:text-5xl md:text-7xl 2xl:text-7xl font-semibold text-white leading-[1.05] tracking-tighter mb-6`}>
+                        {/* Heading */}
+                        <h2
+                            className={`${poppins.className}
+              text-[2.2rem] xs:text-4xl sm:text-5xl md:text-6xl lg:text-6xl 2xl:text-7xl
+              font-semibold text-white leading-[1.05] tracking-tighter mb-6`}
+                        >
                             PURE POWER. <br />
                             <span className="text-transparent bg-clip-text bg-linear-to-r from-[#93D2D9] to-[#6ed5e0]">
                                 ZERO COMPROMISE.
@@ -42,46 +44,76 @@ export const AuthorityHero = () => {
                         </h2>
 
                         {/* Description */}
-                        <p className={`${inter.className} text-gray-400 text-base md:text-lg 2xl:text-xl leading-relaxed mb-10 max-w-md`}>
+                        <p
+                            className={`${inter.className}
+              text-gray-400
+              text-sm sm:text-base md:text-lg
+              leading-relaxed mb-8 sm:mb-10 max-w-md`}
+                        >
                             Precision-filtered whey isolate engineered for maximum
                             bio-availability. No fillers. No sugars. Just results.
                         </p>
 
                         {/* Actions */}
-                        <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center mb-12">
-                            <Link href="/shop/supplements" className="group flex items-center gap-3 bg-[#93D2D9] text-black px-10 py-4 rounded-xl font-semibold uppercase tracking-wider hover:bg-white transition-all duration-300 shadow-lg shadow-[#93D2D9]/25">
+                        <div className="flex flex-col sm:flex-row gap-4 sm:items-center mb-5 sm:mb-8">
+                            <Link
+                                href="/shop/supplements"
+                                className="group inline-flex items-center justify-center gap-3
+                bg-[#93D2D9] text-black
+                px-8 sm:px-10 py-4
+                rounded-xl font-semibold uppercase tracking-wider
+                hover:bg-white transition-all duration-300
+                shadow-lg shadow-[#93D2D9]/25"
+                            >
                                 Shop Elite Series
-                                <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                                <ArrowRight
+                                    size={18}
+                                    className="group-hover:translate-x-1 transition-transform"
+                                />
                             </Link>
-                            <div className="flex items-center gap-3 px-6 border-l border-white/10">
+
+                            <div className="flex items-center gap-3 sm:px-6 sm:border-l border-white/10">
                                 <div className="flex gap-0.5">
                                     {[...Array(5)].map((_, i) => (
-                                        <Star key={i} size={14} className="fill-[#93D2D9] text-[#93D2D9]" />
+                                        <Star
+                                            key={i}
+                                            size={14}
+                                            className="fill-[#93D2D9] text-[#93D2D9]"
+                                        />
                                     ))}
                                 </div>
-                                <span className="text-white text-xs font-bold">4.9 / 5 Rating</span>
+                                <span className="text-white text-xs font-bold">
+                                    4.9 / 5 Rating
+                                </span>
                             </div>
                         </div>
 
-                        {/* Trust Badges */}
-                        <div className="grid grid-cols-2 gap-6 border-t border-white/10 pt-8">
+                        {/* Trust */}
+                        <div className="grid grid-cols-2 gap-6 border-t border-white/10 pt-3 sm:pt-4">
                             <div className="flex items-center gap-2 text-white/60">
                                 <ShieldCheck size={18} className="text-[#93D2D9]" />
-                                <span className="text-[10px] font-bold uppercase tracking-wider">Lab Tested</span>
+                                <span className="text-[10px] font-bold uppercase tracking-wider">
+                                    Lab Tested
+                                </span>
                             </div>
                             <div className="flex items-center gap-2 text-white/60">
                                 <Star size={18} className="text-[#93D2D9]" />
-                                <span className="text-[10px] font-bold uppercase tracking-wider">Athlete Trusted</span>
+                                <span className="text-[10px] font-bold uppercase tracking-wider">
+                                    Athlete Trusted
+                                </span>
                             </div>
                         </div>
                     </div>
 
-                    {/* RIGHT VISUAL */}
+                    {/* RIGHT */}
                     <div className="relative flex justify-center mt-12 lg:mt-0">
                         <div className="absolute inset-0 bg-[#93D2D9]/20 blur-[120px] rounded-full scale-75" />
 
-                        {/* Product Image - Capped width for 2xl to match the original feel */}
-                        <div className="relative w-40 sm:w-64 md:w-72 2xl:w-80 aspect-3/4">
+                        {/* Image */}
+                        <div className="relative
+              w-36 xs:w-40 sm:w-56 md:w-64 lg:w-72 2xl:w-80
+              aspect-3/4"
+                        >
                             <Image
                                 src="/images/shop/sup1-hero-c.png"
                                 alt="Elite Whey Isolate"
@@ -92,14 +124,22 @@ export const AuthorityHero = () => {
                         </div>
 
                         {/* Floating Stats */}
-                        <div className="absolute top-6 right-0 bg-white/5 backdrop-blur-md border border-white/10 px-3 py-3 rounded-full">
-                            <p className="text-[#93D2D9] font-semibold text-md">27G</p>
-                            <p className="text-gray-400 text-[8px] uppercase font-medium tracking-widest">Protein</p>
+                        <div className="absolute top-4 sm:top-6 right-0 bg-white/5 backdrop-blur-md border border-white/10 px-3 py-2 rounded-full">
+                            <p className="text-[#93D2D9] font-semibold text-sm sm:text-md">
+                                27G
+                            </p>
+                            <p className="text-gray-400 text-[8px] uppercase tracking-widest">
+                                Protein
+                            </p>
                         </div>
 
-                        <div className="absolute bottom-10 left-0 bg-white/5 backdrop-blur-md border border-white/10 px-3 py-3 rounded-full">
-                            <p className="text-white font-semibold text-md">0G</p>
-                            <p className="text-gray-400 text-[8px] uppercase font-bold tracking-widest">Sugar</p>
+                        <div className="absolute bottom-6 sm:bottom-10 left-0 bg-white/5 backdrop-blur-md border border-white/10 px-3 py-2 rounded-full">
+                            <p className="text-white font-semibold text-sm sm:text-md">
+                                0G
+                            </p>
+                            <p className="text-gray-400 text-[8px] uppercase tracking-widest">
+                                Sugar
+                            </p>
                         </div>
                     </div>
                 </div>
