@@ -3,6 +3,7 @@
 import Navbar from '@/app/components/Navbar';
 import { AuthorityHero } from '@/app/components/AuthorityHero';
 import ShopComponent from '@/app/components/ShopComponent';
+import Footer from '@/app/components/Footer';
 
 const ShopPage = () => {
     return (
@@ -31,6 +32,7 @@ const ShopPage = () => {
 
                 <ShopComponent />
             </div>
+            <Footer/>
         </div>
     );
 };
