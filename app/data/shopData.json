@@ -23,7 +23,7 @@
         "glutamine": "680mg"
       },
       "usage": "1 scoop with 300ml water, twice daily (one post-workout).",
-      "image_url": "superior14_hydro_whey_zero_5lbs.jpg"
+      "image_url": "https://res.cloudinary.com/dlurrugno/image/upload/v1770021121/HYDRO-whey-zero-pp_py5u5d.webp"
     },
     {
       "vendor": "Superior14",
@@ -33,7 +33,7 @@
       "regular_price": 36450.0,
       "rating": 4.8,
       "benefits": ["Enhanced Recovery", "Boost Metabolism", "Body Efficiency"],
-      "image_url": "superior14_ripped_whey.jpg"
+      "image_url": "https://res.cloudinary.com/dlurrugno/image/upload/v1770021162/B_2_078cf910-1376-409c-afa7-6a780db0e987_exwzpi.webp"
     },
     {
       "vendor": "BSN",
@@ -43,7 +43,7 @@
       "regular_price": 21450.0,
       "rating": 5.0,
       "benefits": ["Builds Muscle", "Support Muscle Recovery"],
-      "image_url": "bsn_syntha6.jpg"
+      "image_url": "https://res.cloudinary.com/dlurrugno/image/upload/v1769784553/SYntha6_lrbx7i.png"
     },
     {
       "vendor": "kevin levrone",
@@ -53,7 +53,7 @@
       "regular_price": 31450.0,
       "rating": 4.7,
       "benefits": ["Muscle Repair", "Boost Metabolism", "Body Efficiency"],
-      "image_url": "kevin_levrone_anabolic_iso.jpg"
+      "image_url": "https://res.cloudinary.com/dlurrugno/image/upload/v1770021259/anabolic-iso-whey-2-kg-68f625476f9fd_5caede13-1feb-476a-ae42-4fab290d4d9f_eqf7ti.webp"
     },
     {
       "vendor": "kevin levrone",
@@ -63,7 +63,7 @@
       "regular_price": 25950.0,
       "rating": 5.0,
       "benefits": ["Boost Metabolism", "Muscle Repair", "Growth"],
-      "image_url": "kevin_levrone_prime_pro.jpg"
+      "image_url": "https://res.cloudinary.com/dlurrugno/image/upload/v1770021316/anabolicprimepro-68f62ad26eba9_gzdb9g.webp"
     },
     {
       "vendor": "Jacked Nutrition",
@@ -73,7 +73,7 @@
       "regular_price": 550.0,
       "rating": 4.5,
       "benefits": ["Fuel Workouts", "Builds Muscle", "Enhanced Performance"],
-      "image_url": "jacked_nutrition_iso_jacked.jpg"
+      "image_url": "https://res.cloudinary.com/dlurrugno/image/upload/v1770021379/IsoJacked5lbs_id7m9k.webp"
     },
     {
       "vendor": "Jacked Nutrition",
@@ -83,7 +83,7 @@
       "regular_price": 6950.0,
       "rating": 4.7,
       "benefits": ["Vegan Friendly", "Muscle Recovery", "Performance"],
-      "image_url": "jacked_nutrition_brown_rice.jpg"
+      "image_url": "https://res.cloudinary.com/dlurrugno/image/upload/v1770021415/1_61e8463a-640c-446f-8cd1-598f2c0d4f36_bdnxpq.webp"
     },
     {
       "vendor": "DYMATIZE NUTRITION",
@@ -93,7 +93,7 @@
       "regular_price": 21450.0,
       "rating": 4.8,
       "benefits": ["Muscle Repair", "Recovery", "Builds Muscle"],
-      "image_url": "dymatize_iso100.jpg"
+      "image_url": "https://res.cloudinary.com/dlurrugno/image/upload/v1770021446/dymatizeiso100_rwzfhj.webp"
     },
     {
       "vendor": "DY Nutrition",
@@ -103,7 +103,7 @@
       "regular_price": 39950.0,
       "rating": 4.7,
       "benefits": ["Rapid Absorption", "Muscle Repair", "Growth"],
-      "image_url": "dy_nutrition_shadowhey.jpg"
+      "image_url": "https://res.cloudinary.com/dlurrugno/image/upload/v1770021478/dy_nutrition_shadowhey_hydrolysate_whey_protein_mb7jz1.webp"
     },
     {
       "vendor": "BPI Sports",
@@ -112,7 +112,7 @@
       "sale_price": 30555.0,
       "regular_price": 33950.0,
       "benefits": ["Muscle Repair", "Growth", "Enhanced Recovery"],
-      "image_url": "bpi_sports_iso_hd.jpg"
+      "image_url": "https://res.cloudinary.com/dlurrugno/image/upload/v1770021528/BPISportsISOHD5lbs_rr2hkb.webp"
     },
     {
       "vendor": "BPI Sports",
@@ -122,7 +122,7 @@
       "regular_price": 25450.0,
       "rating": 4.9,
       "benefits": ["Fuel Workouts", "Builds Muscle", "Performance"],
-      "image_url": "bpi_sports_whey_hd.jpg"
+      "image_url": "https://res.cloudinary.com/dlurrugno/image/upload/v1770021555/BPI_Sports_whey_HD_CHocolate_cookie_5lbs_fazv8s.webp"
     },
     {
       "vendor": "Superior14",
@@ -132,7 +132,7 @@
       "regular_price": 19950.0,
       "rating": 4.6,
       "benefits": ["Builds Muscle", "Support Muscle Recovery"],
-      "image_url": "superior14_whey_core.jpg"
+      "image_url": "https://res.cloudinary.com/dlurrugno/image/upload/v1770021583/Superior-Whey-Core-Chocolate-2270gENHANCED_srzl9t.webp"
     },
     {
       "vendor": "Superior14",
@@ -142,7 +142,7 @@
       "regular_price": 24950.0,
       "rating": 4.6,
       "benefits": ["Enhanced Recovery", "Growth"],
-      "image_url": "superior14_hydro_whey_zero_2lbs.jpg"
+      "image_url": "https://res.cloudinary.com/dlurrugno/image/upload/v1770021777/HYDRO-whey-zero-pp_jenrsn.webp"
     },
     {
       "vendor": "Superior14",
@@ -152,7 +152,7 @@
       "regular_price": 21450.0,
       "rating": 4.9,
       "benefits": ["Builds Muscle", "Muscle Repair", "Growth"],
-      "image_url": "superior14_iso_pro.jpg"
+      "image_url": "https://res.cloudinary.com/dlurrugno/image/upload/v1770021808/Superior14ISOPROWheyProteinIsolate_tsjx91.webp"
     },
     {
       "vendor": "Superior14",
@@ -162,7 +162,7 @@
       "regular_price": 22450.0,
       "rating": 5.0,
       "benefits": ["Builds Muscle", "Muscle Repair", "Growth"],
-      "image_url": "superior14_iso_definition.jpg"
+      "image_url": "https://res.cloudinary.com/dlurrugno/image/upload/v1770021836/2.Superior-Iso-Definition-Chocolate--2270g....ENHANCED_zlirlq.webp"
     },
     {
       "vendor": "Ultimate Nutrition",
@@ -172,7 +172,7 @@
       "regular_price": 31450.0,
       "rating": 4.0,
       "benefits": ["Muscle Repair", "Growth", "Enhanced Recovery"],
-      "image_url": "ultimate_nutrition_prostar.jpg"
+      "image_url": "https://res.cloudinary.com/dlurrugno/image/upload/v1770021885/1_c813d798-1975-4254-a6f0-cf373f583c7c_ar5bcq.webp"
     },
     {
       "vendor": "MuscleMeds",
@@ -181,7 +181,7 @@
       "sale_price": 14805.0,
       "regular_price": 16450.0,
       "benefits": ["Muscle Repair", "Growth", "Dairy Free"],
-      "image_url": "musclemeds_carnivor.jpg"
+      "image_url": "https://res.cloudinary.com/dlurrugno/image/upload/v1770021908/car123_bn6qma.webp"
     }
   ]
 }

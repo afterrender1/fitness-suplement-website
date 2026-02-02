@@ -3,8 +3,8 @@
 import React, { useState } from 'react';
 import { SlidersHorizontal } from 'lucide-react';
 import { Poppins, Inter } from "next/font/google";
-import ShopProductCard from "@/app/components/ShopProductCard"; // Adjust path as needed
-import shopData from "@/app/data/shopData.json"; // Your full JSON file
+import ShopProductCard from "@/app/components/ShopProductCard"; 
+import shopData from "@/app/data/shopData.json"; 
 
 const poppins = Poppins({ weight: ["500", "600", "700"], subsets: ["latin"] });
 const inter = Inter({ subsets: ["latin"] });
@@ -12,12 +12,11 @@ const inter = Inter({ subsets: ["latin"] });
 const ShopComponent = () => {
     const [activeCategory, setActiveCategory] = useState("All");
 
-    // Extract products from the JSON structure
     const products = shopData.products;
 
     return (
         <main className={`min-h-screen bg-[#FAFAFA] rounded-t-3xl md:rounded-t-4xl shadow-[0_-20px_50px_rgba(0,0,0,0.1)] relative z-10 pt-24 pb-32 2xl:pt-40 2xl:pb-48 ${inter.className}`}>
-            <div className="max-w-7xl 2xl:max-w-450 mx-auto px-6 lg:px-8 2xl:px-12">
+            <div className="max-w-7xl 2xl:max-w-440 mx-auto px-6 lg:px-8 2xl:px-12">
 
                 {/* Header Section */}
                 <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-16 2xl:mb-24">
@@ -25,9 +24,9 @@ const ShopComponent = () => {
                         <p className="text-slate-400 font-medium uppercase tracking-[0.2em] text-[10px] md:text-xs 2xl:text-base mb-4">
                             {shopData.store_name} • Premium Supplements
                         </p>
-                        <h1 className={`${poppins.className} text-4xl md:text-5xl lg:text-6xl 2xl:text-8xl font-bold text-slate-900 tracking-tight leading-[1.1]`}>
+                        <h1 className={`${poppins.className} text-4xl md:text-5xl lg:text-6xl 2xl:text-7xl font-bold text-slate-900 tracking-tight leading-[1.1]`}>
                             Fuel Your <br />
-                            <span className="text-teal-500">Performance</span>
+                            <span className="text-[#5ecad6]">Performance</span>
                         </h1>
                     </div>
 
@@ -65,7 +64,7 @@ const ShopComponent = () => {
                 </div>
 
                 {/* Product Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-8 lg:gap-10 2xl:gap-12">
+                <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-8 lg:gap-10 2xl:gap-12">
                     {products.map((product, index) => (
                         <ShopProductCard key={product.id || index} product={product} />
                     ))}
