@@ -140,15 +140,15 @@ export default async function ProductDetailPage({ params }) {
 
                     {/* Left Column - Images & Specs */}
                     <div className="lg:col-span-7 xl:col-span-8">
-                        <div className="lg:sticky lg:top-24 space-y-6">
-
-                            {/* Image Gallery */}
                             <ProductImageGallery
                                 src={product.image_url}
                                 alt={product.name}
                                 discount={discount}
                                 themeColor={THEME.primary}
                             />
+                        <div className="lg:sticky lg:top-24 space-y-6">
+
+                            {/* Image Gallery */}
 
                             {/* Macros Grid */}
 
