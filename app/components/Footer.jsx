@@ -14,18 +14,13 @@ export default function Footer() {
 
     return (
         <footer className={`bg-slate-900 text-slate-400 ${inter.className} relative overflow-hidden`}>
-            {/* Subtle Background Gradient */}
             <div className="absolute inset-0 bg-linear-to-b from-slate-900 to-slate-950 pointer-events-none" />
-
-            {/* Top Wave Decoration */}
             <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-teal-500/50 to-transparent" />
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-
-                {/* Main Content */}
                 <div className="py-12 sm:py-16 lg:py-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8">
 
-                    {/* Brand Column */}
+                    {/* Brand */}
                     <div className="lg:col-span-4 space-y-6">
                         <Link href="/" className="inline-block group">
                             <span className={`${poppins.className} text-2xl sm:text-3xl font-extrabold tracking-tight text-white group-hover:text-teal-400 transition-colors duration-300`}>
@@ -37,7 +32,7 @@ export default function Footer() {
                             Premium performance supplements built on science, purity, and results. Elevate your potential.
                         </p>
 
-                        {/* Social Links */}
+                        {/* Social */}
                         <div className="flex items-center gap-4">
                             {[Instagram, Twitter].map((Icon, i) => (
                                 <a
@@ -56,20 +51,25 @@ export default function Footer() {
                     <div className="lg:col-span-2 lg:col-start-6">
                         <h4 className="text-white font-bold text-sm uppercase tracking-wider mb-6">Navigate</h4>
                         <ul className="space-y-4">
-                            {['Home', 'Shop', 'About', 'Reviews', 'Contact'].map((item) => (
-                                <li key={item}>
-                                    <Link
-                                        href={item === 'Home' ? '/' : `/${item.toLowerCase()}`}
-                                        className="text-sm hover:text-teal-400 transition-colors duration-300 inline-block hover:translate-x-1 transform"
-                                    >
-                                        {item}
-                                    </Link>
-                                </li>
-                            ))}
+                            <li>
+                                <Link href="/" className="text-sm hover:text-teal-400 transition-colors duration-300 inline-block hover:translate-x-1 transform">Home</Link>
+                            </li>
+                            <li>
+                                <Link href="/shop/supplements" className="text-sm hover:text-teal-400 transition-colors duration-300 inline-block hover:translate-x-1 transform">Shop</Link>
+                            </li>
+                            <li>
+                                <Link href="/#about" className="text-sm hover:text-teal-400 transition-colors duration-300 inline-block hover:translate-x-1 transform">About</Link>
+                            </li>
+                            <li>
+                                <Link href="/#reviews" className="text-sm hover:text-teal-400 transition-colors duration-300 inline-block hover:translate-x-1 transform">Reviews</Link>
+                            </li>
+                            <li>
+                                <Link href="/contact" className="text-sm hover:text-teal-400 transition-colors duration-300 inline-block hover:translate-x-1 transform">Contact</Link>
+                            </li>
                         </ul>
                     </div>
 
-                    {/* Contact Info */}
+                    {/* Contact */}
                     <div className="lg:col-span-3">
                         <h4 className="text-white font-bold text-sm uppercase tracking-wider mb-6">Contact</h4>
                         <ul className="space-y-4">
@@ -136,7 +136,6 @@ export default function Footer() {
                             Fuel • Perform • Recover
                         </span>
 
-                        {/* Back to Top */}
                         <button
                             onClick={scrollToTop}
                             className="w-8 h-8 rounded-full bg-slate-800 hover:bg-teal-500 flex items-center justify-center text-slate-400 hover:text-white transition-all duration-300 hover:-translate-y-1"
@@ -146,7 +145,6 @@ export default function Footer() {
                         </button>
                     </div>
                 </div>
-
             </div>
         </footer>
     );
