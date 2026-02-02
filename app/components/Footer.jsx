@@ -123,7 +123,7 @@ export default function Footer() {
                 {/* Bottom Bar */}
                 <div className="border-t border-slate-800 py-6 sm:py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
                     <div className="flex flex-col sm:flex-row items-center gap-4 text-xs text-slate-500">
-                        <span>&copy; {new Date().getFullYear()} Prime Supps. All rights reserved.</span>
+                        <span>&copy; {new Date().getFullYear()} Afterrender. All rights reserved.</span>
                         <span className="hidden sm:block text-slate-700">|</span>
                         <div className="flex items-center gap-4">
                             <Link href="/privacy" className="hover:text-teal-400 transition-colors">Privacy</Link>
