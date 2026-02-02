@@ -6,14 +6,14 @@ import ShopComponent from '@/app/components/ShopComponent';
 
 const ShopPage = () => {
     return (
-        <div className="relative bg-black min-h-screen">
+        <div className="relative  bg-black min-h-screen">
             <Navbar />
 
             {/* STICKY WRAPPER 
                 h-[100vh] ensures the hero stays visible for the full viewport.
                 z-0 keeps it behind the upcoming content.
             */}
-            <div className="h-screen md:sticky top-0 overflow-hidden z-0">
+            <div className="h-135 md:min-h-screen md:sticky top-0 overflow-hidden z-0">
                 <AuthorityHero />
             </div>
 
@@ -26,7 +26,7 @@ const ShopPage = () => {
   relative z-10 bg-[#FAFAFA]
   rounded-t-[40px] md:rounded-t-[80px]
   shadow-[0_-30px_60px_rgba(0,0,0,0.4)]
-  -mt-2 sm:-mt-20
+  -mt-20 sm:-mt-20
 ">
 
                 <ShopComponent />

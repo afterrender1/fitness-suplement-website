@@ -17,25 +17,36 @@ export const AuthorityHero = () => {
     const y = useTransform(scrollYProgress, [0, 0.3], [0, -40]);
 
     return (
-        <section className="relative w-full bg-black overflow-hidden rounded-2xl">
+        <section className="relative lg:mt-20 w-full bg-black overflow-hidden rounded-2xl min-h-0 md:min-h-0">
+            {/* MOBILE ONLY: Background Image Aspect */}
+            <div className="absolute inset-0 block md:hidden opacity-40">
+                <Image
+                    src="/images/shop/sup1-hero-c.png"
+                    alt="Background Product"
+                    fill
+                    className="object-contain object-bottom-right scale-125"
+                    priority
+                />
+                {/* Overlay for readability on mobile */}
+                <div className="absolute inset-0 bg-linear-to-t from-black via-black/60 to-transparent" />
+            </div>
+
             {/* Background Glow */}
             <div className="absolute -top-40 -right-40 w-160 h-160 bg-[#93D2D9]/10 blur-[160px] rounded-full" />
 
             <motion.div
                 style={{ scale, opacity, y }}
-                className="relative z-10 max-w-7xl mx-auto
-        px-4 sm:px-6 lg:px-8
-        py-16 sm:py-20 md:py-24 lg:py-28"
+                className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 md:py-24 lg:py-28"
             >
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-
-                    {/* LEFT */}
-                    <div className="max-w-xl">
+                    
+                    {/* LEFT CONTENT */}
+                    <div className="max-w-xl relative z-20">
                         {/* Heading */}
                         <h2
                             className={`${poppins.className}
-              text-[2.2rem] xs:text-4xl sm:text-5xl md:text-6xl lg:text-6xl 2xl:text-7xl
-              font-semibold text-white leading-[1.05] tracking-tighter mb-6`}
+                            text-[2.2rem] xs:text-4xl sm:text-5xl md:text-6xl lg:text-6xl 2xl:text-7xl
+                            font-semibold text-white leading-[1.05] tracking-tighter mb-6`}
                         >
                             PURE POWER. <br />
                             <span className="text-transparent bg-clip-text bg-linear-to-r from-[#93D2D9] to-[#6ed5e0]">
@@ -46,9 +57,9 @@ export const AuthorityHero = () => {
                         {/* Description */}
                         <p
                             className={`${inter.className}
-              text-gray-400
-              text-sm sm:text-base md:text-lg
-              leading-relaxed mb-8 sm:mb-10 max-w-md`}
+                            text-gray-300 md:text-gray-400
+                            text-sm sm:text-base md:text-lg
+                            leading-relaxed mb-8 sm:mb-10 max-w-md`}
                         >
                             Precision-filtered whey isolate engineered for maximum
                             bio-availability. No fillers. No sugars. Just results.
@@ -59,11 +70,11 @@ export const AuthorityHero = () => {
                             <Link
                                 href="/shop/supplements"
                                 className="group inline-flex items-center justify-center gap-3
-                bg-[#93D2D9] text-black
-                px-8 sm:px-10 py-4
-                rounded-xl font-semibold uppercase tracking-wider
-                hover:bg-white transition-all duration-300
-                shadow-lg shadow-[#93D2D9]/25"
+                                bg-[#93D2D9] text-black
+                                px-8 sm:px-10 py-4
+                                rounded-xl font-semibold uppercase tracking-wider
+                                hover:bg-white transition-all duration-300
+                                shadow-lg shadow-[#93D2D9]/25"
                             >
                                 Shop Elite Series
                                 <ArrowRight
@@ -105,20 +116,11 @@ export const AuthorityHero = () => {
                         </div>
                     </div>
 
-                    {/* RIGHT */}
-                    <div className="relative flex justify-center mt-1 lg:mt-0">
+                    {/* RIGHT CONTENT (Visible from md up) */}
+                    <div className="relative hidden md:flex justify-center mt-1 lg:mt-0">
                         <div className="absolute inset-0 bg-[#93D2D9]/20 blur-[120px] rounded-full scale-75" />
 
-                        {/* Image */}
-                    <div
-  className="
-    relative
-    w-36 xs:w-40 sm:w-56 md:w-64 lg:w-72 2xl:w-80
-    max-h-[60vh] sm:max-h-none
-    aspect-3/4
-  "
->
-
+                        <div className="relative w-56 md:w-64 lg:w-72 2xl:w-80 aspect-3/4">
                             <Image
                                 src="/images/shop/sup1-hero-c.png"
                                 alt="Elite Whey Isolate"
@@ -129,22 +131,14 @@ export const AuthorityHero = () => {
                         </div>
 
                         {/* Floating Stats */}
-                        <div className="absolute top-4 sm:top-6 right-0 bg-white/5 backdrop-blur-md border border-white/10 px-3 py-2 rounded-full">
-                            <p className="text-[#93D2D9] font-semibold text-sm sm:text-md">
-                                27G
-                            </p>
-                            <p className="text-gray-400 text-[8px] uppercase tracking-widest">
-                                Protein
-                            </p>
+                        <div className="absolute top-4 right-0 bg-white/5 backdrop-blur-md border border-white/10 px-3 py-2 rounded-full">
+                            <p className="text-[#93D2D9] font-semibold text-sm">27G</p>
+                            <p className="text-gray-400 text-[8px] uppercase tracking-widest">Protein</p>
                         </div>
 
-                        <div className="absolute bottom-6 sm:bottom-10 left-0 bg-white/5 backdrop-blur-md border border-white/10 px-3 py-2 rounded-full">
-                            <p className="text-white font-semibold text-sm sm:text-md">
-                                0G
-                            </p>
-                            <p className="text-gray-400 text-[8px] uppercase tracking-widest">
-                                Sugar
-                            </p>
+                        <div className="absolute bottom-10 left-0 bg-white/5 backdrop-blur-md border border-white/10 px-3 py-2 rounded-full">
+                            <p className="text-white font-semibold text-sm">0G</p>
+                            <p className="text-gray-400 text-[8px] uppercase tracking-widest">Sugar</p>
                         </div>
                     </div>
                 </div>
