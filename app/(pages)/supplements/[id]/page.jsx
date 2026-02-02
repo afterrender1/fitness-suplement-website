@@ -17,6 +17,12 @@ import {
     CreditCard,
     Heart,
     Share2,
+    Layers,
+    Droplets,
+    Wheat,
+    Flame,
+    Info,
+    Check,
 
 } from "lucide-react";
 import shopData from "@/app/data/shopData.json";
@@ -145,47 +151,82 @@ export default async function ProductDetailPage({ params }) {
                             />
 
                             {/* Macros Grid */}
-                            <div className="bg-white rounded-2xl border border-slate-100 p-6 shadow-sm">
-                                <h3 className="text-sm font-bold uppercase tracking-wider text-slate-400 mb-4">
-                                    Nutrition Facts <span className="text-xs normal-case font-normal">(per serving)</span>
-                                </h3>
-                                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-                                    {Object.entries(product.macros || {}).map(([key, value]) => (
-                                        <div
-                                            key={key}
-                                            className="text-center p-4 rounded-xl transition-colors hover:bg-slate-50"
-                                            style={{ backgroundColor: `${THEME.primary}08` }}
-                                        >
-                                            <p className="text-[10px] font-bold uppercase tracking-widest mb-1" style={{ color: THEME.gray }}>
-                                                {key}
-                                            </p>
-                                            <p className="text-xl font-bold" style={{ color: THEME.dark }}>
-                                                {value}
-                                            </p>
-                                        </div>
-                                    ))}
+
+                            <div className="bg-white rounded-lg border border-gray-100  p-4 sm:p-5 max-w-full">
+                                {/* Compact Header */}
+                                <div className="flex items-center justify-between mb-4">
+                                    <div>
+                                        <h3 className="text-xs font-bold text-slate-900 uppercase tracking-tight">Nutrition Facts</h3>
+                                        <p className="text-[10px] text-slate-400">Per Serving (30g)</p>
+                                    </div>
+                                    <Layers size={16} className="text-[#93D2D9] opacity-70" />
                                 </div>
+
+                                {/* Dense Macros Grid */}
+                                <div className="grid grid-cols-2 gap-2">
+                                    {Object.entries(product.macros || {}).map(([key, value], index) => {
+                                        const iconMap = {
+                                            protein: { icon: Droplets, color: "#93D2D9" },
+                                            carbs: { icon: Wheat, color: "#F59E0B" },
+                                            fats: { icon: Droplets, color: "#EF4444" },
+                                            calories: { icon: Flame, color: "#F97316" }
+                                        };
+
+                                        const { icon: Icon, color } = iconMap[key.toLowerCase()] || { icon: Info, color: "#93D2D9" };
+
+                                        return (
+                                            <div key={key} className="p-3 rounded-xl bg-slate-50/50 border border-slate-100 transition-all hover:bg-white hover:shadow-md hover:shadow-slate-200/50">
+                                                <div className="flex items-center gap-2 mb-1.5">
+                                                    <Icon size={12} style={{ color }} />
+                                                    <span className="text-[9px] font-bold uppercase tracking-wider text-slate-400">{key}</span>
+                                                </div>
+
+                                                <div className="flex items-baseline gap-0.5">
+                                                    <span className="text-lg font-bold text-slate-900">{value.replace(/[a-zA-Z]/g, '')}</span>
+                                                    <span className="text-[10px] font-medium text-slate-500">{value.replace(/[0-9]/g, '')}</span>
+                                                </div>
+
+                                                <div className="mt-2 h-1 bg-slate-200/50 rounded-full overflow-hidden">
+                                                    <div
+                                                        className="h-full rounded-full transition-all"
+                                                        style={{
+                                                            width: index === 0 ? '80%' : index === 1 ? '50%' : index === 2 ? '30%' : '65%',
+                                                            backgroundColor: color
+                                                        }}
+                                                    />
+                                                </div>
+                                            </div>
+                                        );
+                                    })}
+                                </div>
+
+                                {/* Minimal Footer */}
+                                <p className="mt-4 text-[9px] text-slate-400 leading-tight italic">
+                                    * % Daily Values based on a 2,000 calorie diet.
+                                </p>
                             </div>
 
                             {/* Trust Badges */}
-                            <div className="grid grid-cols-3 gap-4">
+                            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                                 {[
-                                    { icon: Truck, label: "Fast Delivery", sub: "2-3 Days" },
-                                    { icon: Award, label: "Premium Quality", sub: "Lab Tested" },
-                                    { icon: Clock, label: "Fresh Stock", sub: "2024 Batch" },
+                                    { icon: Truck, label: "Fast Delivery", sub: "2-3 Days", color: "#93D2D9" },
+                                    { icon: Award, label: "Premium Quality", sub: "Lab Tested", color: "#F59E0B" },
+                                    { icon: Clock, label: "Fresh Stock", sub: "2024 Batch", color: "#10B981" },
                                 ].map((badge, i) => (
                                     <div
                                         key={i}
-                                        className="bg-white border border-slate-100 rounded-xl p-4 flex flex-col items-center text-center hover:border-slate-200 transition-colors"
+                                        className="group bg-white border border-slate-100 rounded-2xl p-4 flex items-center gap-4 hover:border-slate-200 hover:shadow-md transition-all duration-300"
                                     >
                                         <div
-                                            className="w-10 h-10 rounded-full flex items-center justify-center mb-3"
-                                            style={{ backgroundColor: THEME.primaryLight }}
+                                            className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform"
+                                            style={{ backgroundColor: `${badge.color}12` }}
                                         >
-                                            <badge.icon size={20} style={{ color: THEME.primaryDark }} />
+                                            <badge.icon size={20} style={{ color: badge.color }} strokeWidth={2} />
                                         </div>
-                                        <p className="text-xs font-bold text-slate-900">{badge.label}</p>
-                                        <p className="text-[10px] text-slate-400 mt-0.5">{badge.sub}</p>
+                                        <div className="text-left">
+                                            <p className="text-sm font-bold text-slate-900">{badge.label}</p>
+                                            <p className="text-[11px] text-slate-400">{badge.sub}</p>
+                                        </div>
                                     </div>
                                 ))}
                             </div>
@@ -279,7 +320,7 @@ export default async function ProductDetailPage({ params }) {
                             </div>
 
                             {/* Benefits */}
-                            <div className="bg-white rounded-2xl border border-slate-100 p-6 shadow-sm">
+                            <div className="bg-white rounded-2xl border border-gray-100 p-6 ">
                                 <h3 className="text-sm font-bold uppercase tracking-wider text-slate-400 mb-4">
                                     Key Benefits
                                 </h3>
@@ -339,7 +380,7 @@ export default async function ProductDetailPage({ params }) {
                             </h2>
                         </div>
                         <Link
-                            href="/shop"
+                            href="/shop/supplements"
                             className="hidden sm:flex items-center gap-1 text-sm font-semibold hover:gap-2 transition-all"
                             style={{ color: THEME.primaryDark }}
                         >
@@ -351,8 +392,8 @@ export default async function ProductDetailPage({ params }) {
                         {relatedProducts.map((item) => (
                             <Link
                                 key={item.id}
-                                href={`/product/${item.id}`}
-                                className="group bg-white rounded-2xl border border-slate-100 overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+                                href={`/supplements/${item.id}`}
+                                className="group bg-white rounded-2xl border border-slate-100 overflow-hidden  hover:-translate-y-1 transition-all duration-300"
                             >
                                 <div className="aspect-square p-6 flex items-center justify-center bg-slate-50/50 relative">
                                     <Image
