@@ -4,6 +4,8 @@ import Image from "next/image";
 import { ArrowRight, Star, ShieldCheck } from "lucide-react";
 import Link from "next/link";
 import { Inter, Poppins } from "next/font/google";
+import { useState } from "react";
+import InfoModal from "./InfoModal";
 
 // Load Fonts
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
@@ -14,9 +16,17 @@ const poppins = Poppins({
 });
 
 export default function Hero() {
+    const [isModalOpen, setIsModalOpen] = useState(false);
     return (
         <section className="relative w-full h-[85vh] sm:h-[90vh] md:h-[95vh] flex items-center overflow-hidden bg-black">
 
+            <InfoModal
+                isOpen={isModalOpen}
+                onClose={() => setIsModalOpen(false)}
+                title="Gym Enrollment Opening Soon"
+                message="Get ready to transform. We are putting the final touches on our state-of-the-art facility. Memberships will be limited to ensure a premium experience for every athlete. Sign up for the waitlist to secure your spot and lock in 'Founding Member' pricing."
+                size="md"
+            />
             {/* Background Images */}
             <div className="absolute inset-0 z-0">
                 {/* Mobile */}
@@ -81,7 +91,7 @@ export default function Hero() {
                             <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                         </Link>
 
-                        <button className="flex items-center justify-center gap-2 bg-white/10 backdrop-blur-md border border-white/10 text-white px-6 sm:px-10 py-3 sm:py-4 rounded-xl font-semibold hover:bg-white/20 transition-all mt-3 sm:mt-0">
+                        <button onClick={() => setIsModalOpen(true)} className="flex items-center justify-center gap-2 bg-white/10 backdrop-blur-md border border-white/10 text-white px-6 sm:px-10 py-3 sm:py-4 rounded-xl font-semibold hover:bg-white/20 transition-all mt-3 sm:mt-0">
                             GYM Enrollment
                         </button>
                     </div>
