@@ -22,7 +22,13 @@ const ShopPage = () => {
                 The -mt-20 pull-up creates a seamless transition over the Hero's bottom edge.
                 rounded-t-[40px] maintains the premium aesthetic.
             */}
-            <div className="relative z-10 bg-[#FAFAFA] rounded-t-[40px] md:rounded-t-[80px] shadow-[0_-30px_60px_rgba(0,0,0,0.4)] -mt-20">
+            <div className="
+  relative z-10 bg-[#FAFAFA]
+  rounded-t-[40px] md:rounded-t-[80px]
+  shadow-[0_-30px_60px_rgba(0,0,0,0.4)]
+  -mt-2 sm:-mt-20
+">
+
                 <ShopComponent />
             </div>
         </div>

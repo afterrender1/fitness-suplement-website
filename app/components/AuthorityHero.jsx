@@ -106,14 +106,19 @@ export const AuthorityHero = () => {
                     </div>
 
                     {/* RIGHT */}
-                    <div className="relative flex justify-center mt-12 lg:mt-0">
+                    <div className="relative flex justify-center mt-1 lg:mt-0">
                         <div className="absolute inset-0 bg-[#93D2D9]/20 blur-[120px] rounded-full scale-75" />
 
                         {/* Image */}
-                        <div className="relative
-              w-36 xs:w-40 sm:w-56 md:w-64 lg:w-72 2xl:w-80
-              aspect-3/4"
-                        >
+                    <div
+  className="
+    relative
+    w-36 xs:w-40 sm:w-56 md:w-64 lg:w-72 2xl:w-80
+    max-h-[60vh] sm:max-h-none
+    aspect-3/4
+  "
+>
+
                             <Image
                                 src="/images/shop/sup1-hero-c.png"
                                 alt="Elite Whey Isolate"
