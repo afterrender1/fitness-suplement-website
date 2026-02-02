@@ -6,6 +6,7 @@
   "payment_offers": "Extra discount on Debit/Credit Card",
   "products": [
     {
+      "id": "ps-7214",
       "vendor": "Superior14",
       "name": "HYDRO WHEY ZERO PROTEIN POWDER",
       "protein_per_serving": "34g",
@@ -14,18 +15,10 @@
       "rating": 4.6,
       "reviews": 47,
       "benefits": ["Muscle Repair", "Growth", "Enhanced Recovery"],
-      "technical_details": {
-        "carbs": "<1g",
-        "fats": "<1g",
-        "sugar": "0g",
-        "enzymes": "Lactase (for digestion)",
-        "amino_acids": "Added BCAAs",
-        "glutamine": "680mg"
-      },
-      "usage": "1 scoop with 300ml water, twice daily (one post-workout).",
       "image_url": "https://res.cloudinary.com/dlurrugno/image/upload/v1770021121/HYDRO-whey-zero-pp_py5u5d.webp"
     },
     {
+      "id": "ps-3852",
       "vendor": "Superior14",
       "name": "RIPPED WHEY PROTEIN",
       "protein_per_serving": "43g",
@@ -36,6 +29,7 @@
       "image_url": "https://res.cloudinary.com/dlurrugno/image/upload/v1770021162/B_2_078cf910-1376-409c-afa7-6a780db0e987_exwzpi.webp"
     },
     {
+      "id": "ps-9901",
       "vendor": "BSN",
       "name": "Syntha 6",
       "protein_per_serving": "47g",
@@ -46,6 +40,7 @@
       "image_url": "https://res.cloudinary.com/dlurrugno/image/upload/v1769784553/SYntha6_lrbx7i.png"
     },
     {
+      "id": "ps-1247",
       "vendor": "kevin levrone",
       "name": "ANABOLIC ISO WHEY",
       "protein_per_serving": "30g",
@@ -56,6 +51,7 @@
       "image_url": "https://res.cloudinary.com/dlurrugno/image/upload/v1770021259/anabolic-iso-whey-2-kg-68f625476f9fd_5caede13-1feb-476a-ae42-4fab290d4d9f_eqf7ti.webp"
     },
     {
+      "id": "ps-5529",
       "vendor": "kevin levrone",
       "name": "ANABOLIC PRIME PRO",
       "protein_per_serving": "30g",
@@ -66,6 +62,7 @@
       "image_url": "https://res.cloudinary.com/dlurrugno/image/upload/v1770021316/anabolicprimepro-68f62ad26eba9_gzdb9g.webp"
     },
     {
+      "id": "ps-8843",
       "vendor": "Jacked Nutrition",
       "name": "ISO JACKED WHEY PROTEIN - ULTRA-PREMIUM",
       "protein_per_serving": "27g",
@@ -76,6 +73,7 @@
       "image_url": "https://res.cloudinary.com/dlurrugno/image/upload/v1770021379/IsoJacked5lbs_id7m9k.webp"
     },
     {
+      "id": "ps-2216",
       "vendor": "Jacked Nutrition",
       "name": "JACKED BROWN RICE PROTEIN",
       "protein_per_serving": "25g",
@@ -86,6 +84,7 @@
       "image_url": "https://res.cloudinary.com/dlurrugno/image/upload/v1770021415/1_61e8463a-640c-446f-8cd1-598f2c0d4f36_bdnxpq.webp"
     },
     {
+      "id": "ps-6674",
       "vendor": "DYMATIZE NUTRITION",
       "name": "ISO 100",
       "protein_per_serving": "25g",
@@ -96,6 +95,7 @@
       "image_url": "https://res.cloudinary.com/dlurrugno/image/upload/v1770021446/dymatizeiso100_rwzfhj.webp"
     },
     {
+      "id": "ps-4432",
       "vendor": "DY Nutrition",
       "name": "SHADOWHEY HYDROLYSATE WHEY PROTEIN",
       "protein_per_serving": "25g",
@@ -106,15 +106,18 @@
       "image_url": "https://res.cloudinary.com/dlurrugno/image/upload/v1770021478/dy_nutrition_shadowhey_hydrolysate_whey_protein_mb7jz1.webp"
     },
     {
+      "id": "ps-1098",
       "vendor": "BPI Sports",
       "name": "ISO HD BY BPI SPORTS",
       "protein_per_serving": "25g",
       "sale_price": 30555.0,
       "regular_price": 33950.0,
+      "rating": 4.5,
       "benefits": ["Muscle Repair", "Growth", "Enhanced Recovery"],
       "image_url": "https://res.cloudinary.com/dlurrugno/image/upload/v1770021528/BPISportsISOHD5lbs_rr2hkb.webp"
     },
     {
+      "id": "ps-3367",
       "vendor": "BPI Sports",
       "name": "WHEY HD",
       "protein_per_serving": "25g",
@@ -125,6 +128,7 @@
       "image_url": "https://res.cloudinary.com/dlurrugno/image/upload/v1770021555/BPI_Sports_whey_HD_CHocolate_cookie_5lbs_fazv8s.webp"
     },
     {
+      "id": "ps-9041",
       "vendor": "Superior14",
       "name": "WHEY CORE PROTEIN",
       "protein_per_serving": "32g",
@@ -135,6 +139,7 @@
       "image_url": "https://res.cloudinary.com/dlurrugno/image/upload/v1770021583/Superior-Whey-Core-Chocolate-2270gENHANCED_srzl9t.webp"
     },
     {
+      "id": "ps-8120",
       "vendor": "Superior14",
       "name": "HYDRO WHEY ZERO PROTEIN POWDER",
       "protein_per_serving": "34g",
@@ -145,6 +150,7 @@
       "image_url": "https://res.cloudinary.com/dlurrugno/image/upload/v1770021777/HYDRO-whey-zero-pp_jenrsn.webp"
     },
     {
+      "id": "ps-4763",
       "vendor": "Superior14",
       "name": "ISO PRO",
       "protein_per_serving": "30g",
@@ -155,6 +161,7 @@
       "image_url": "https://res.cloudinary.com/dlurrugno/image/upload/v1770021808/Superior14ISOPROWheyProteinIsolate_tsjx91.webp"
     },
     {
+      "id": "ps-6319",
       "vendor": "Superior14",
       "name": "ISO DEFINITION",
       "protein_per_serving": "30g",
@@ -165,6 +172,7 @@
       "image_url": "https://res.cloudinary.com/dlurrugno/image/upload/v1770021836/2.Superior-Iso-Definition-Chocolate--2270g....ENHANCED_zlirlq.webp"
     },
     {
+      "id": "ps-5022",
       "vendor": "Ultimate Nutrition",
       "name": "Prostar 100% Whey Protein",
       "protein_per_serving": "30g",
@@ -175,11 +183,13 @@
       "image_url": "https://res.cloudinary.com/dlurrugno/image/upload/v1770021885/1_c813d798-1975-4254-a6f0-cf373f583c7c_ar5bcq.webp"
     },
     {
+      "id": "ps-2774",
       "vendor": "MuscleMeds",
       "name": "CARNIVOR BEEF PROTEIN",
       "protein_per_serving": "29g",
       "sale_price": 14805.0,
       "regular_price": 16450.0,
+      "rating": 4.4,
       "benefits": ["Muscle Repair", "Growth", "Dairy Free"],
       "image_url": "https://res.cloudinary.com/dlurrugno/image/upload/v1770021908/car123_bn6qma.webp"
     }

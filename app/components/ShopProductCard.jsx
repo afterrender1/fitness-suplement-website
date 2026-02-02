@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { Star } from "lucide-react";
+import Link from "next/link";
 
 export default function ShopProductCard({ product }) {
     const discount =
@@ -29,6 +30,7 @@ export default function ShopProductCard({ product }) {
     ">
 
             {/* IMAGE */}
+          <Link href={`/supplements/${product.id}`}>
             <div className="relative aspect-square bg-gray-50 p-4">
                 <Image
                     src={imageSrc}
@@ -50,6 +52,7 @@ export default function ShopProductCard({ product }) {
                     </span>
                 )}
             </div>
+          </Link>
 
             {/* CONTENT */}
             <div className="p-4 flex flex-col gap-3">
