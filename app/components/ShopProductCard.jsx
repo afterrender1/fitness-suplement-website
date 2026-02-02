@@ -105,11 +105,11 @@ export default function ShopProductCard({ product }) {
                 {/* Price */}
                 <div className="mt-2">
                     <p className="text-lg font-semibold text-gray-900">
-                        Rs {product.sale_price.toLocaleString()}
+                        USD {product.sale_price.toLocaleString()}
                     </p>
                     {product.regular_price && (
                         <p className="text-xs text-gray-400 line-through ">
-                            Rs {product.regular_price.toLocaleString()}
+                            USD {product.regular_price.toLocaleString()}
                         </p>
                     )}
                 </div>
