@@ -13,9 +13,9 @@ export default function Footer() {
     };
 
     return (
-        <footer className={`bg-slate-900 text-slate-400 ${inter.className} relative overflow-hidden`}>
-            <div className="absolute inset-0 bg-linear-to-b from-slate-900 to-slate-950 pointer-events-none" />
-            <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-teal-500/50 to-transparent" />
+        <footer className={`bg-black text-slate-400 ${inter.className} relative overflow-hidden`}>
+            <div className="absolute inset-0 bg-linear-to-b from-slate-90 to-slate-950 pointer-events-none" />
+            <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-teal-800/50 to-transparent" />
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div className="py-12 sm:py-16 lg:py-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8">
