@@ -62,7 +62,7 @@ export default async function ProductDetailPage({ params }) {
         .slice(0, 4);
 
     return (
-        <div className={`min-h-screen bg-[#FAFAFA] text-slate-900 ${inter.className}`}>
+        <div className={`min-h-screen  text-slate-900 ${inter.className}`}>
 
             {/* Top Trust Bar */}
             <div
