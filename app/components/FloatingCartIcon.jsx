@@ -11,7 +11,7 @@ const FloatingCartIcon = ({ onClick, itemCount = 0 }) => {
             whileHover={{ y: -4 }}
             whileTap={{ scale: 0.95 }}
             onClick={onClick}
-            className="fixed bottom-15 right-4 lg:bottom-8 lg:right-8 z-50 cursor-pointer rounded-full bg-black p-3 shadow-[0_20px_50px_rgba(0,0,0,0.2)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.4)] transition-shadow duration-300 group"
+            className="fixed bottom-17 right-4 lg:bottom-8 lg:right-8 z-50 cursor-pointer rounded-full bg-black p-3 shadow-[0_20px_50px_rgba(0,0,0,0.2)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.4)] transition-shadow duration-300 group"
         >
             {/* Notification Badge */}
             <AnimatePresence mode="popLayout">

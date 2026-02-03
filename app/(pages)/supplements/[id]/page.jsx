@@ -66,7 +66,7 @@ export default async function ProductDetailPage({ params }) {
 
             {/* Top Trust Bar */}
             <div
-                className="text-white text-center py-2.5 px-4 text-[11px] font-semibold tracking-[0.15em] uppercase"
+                className="text-white text-center py-2 px-4 text-[0.5rem] md:text-[0.8rem] font-semibold tracking-[0.15em] uppercase"
                 style={{ backgroundColor: THEME.dark }}
             >
                 <span className="inline-flex items-center gap-2">
@@ -154,7 +154,7 @@ export default async function ProductDetailPage({ params }) {
 
                             <div className="bg-white rounded-lg border border-gray-100  p-4 sm:p-5 max-w-full">
                                 {/* Compact Header */}
-                                <div className="flex items-center justify-between mb-4">
+                                <div className="flex items-center justify-between mb-1">
                                     <div>
                                         <h3 className="text-xs font-bold text-slate-900 uppercase tracking-tight">Nutrition Facts</h3>
                                         <p className="text-[10px] text-slate-400">Per Serving (30g)</p>
@@ -163,7 +163,7 @@ export default async function ProductDetailPage({ params }) {
                                 </div>
 
                                 {/* Dense Macros Grid */}
-                                <div className="grid grid-cols-2 gap-2">
+                                <div className="grid grid-cols-4 md:grid-cols-4 gap-1">
                                     {Object.entries(product.macros || {}).map(([key, value], index) => {
                                         const iconMap = {
                                             protein: { icon: Droplets, color: "#93D2D9" },
@@ -175,8 +175,8 @@ export default async function ProductDetailPage({ params }) {
                                         const { icon: Icon, color } = iconMap[key.toLowerCase()] || { icon: Info, color: "#93D2D9" };
 
                                         return (
-                                            <div key={key} className="p-3 rounded-xl bg-slate-50/50 border border-slate-100 transition-all hover:bg-white hover:shadow-md hover:shadow-slate-200/50">
-                                                <div className="flex items-center gap-2 mb-1.5">
+                                            <div key={key} className="p-2 ">
+                                                <div className="flex items-center gap-1 mb-1.5">
                                                     <Icon size={12} style={{ color }} />
                                                     <span className="text-[9px] font-bold uppercase tracking-wider text-slate-400">{key}</span>
                                                 </div>
@@ -201,13 +201,13 @@ export default async function ProductDetailPage({ params }) {
                                 </div>
 
                                 {/* Minimal Footer */}
-                                <p className="mt-4 text-[9px] text-slate-400 leading-tight italic">
-                                    * % Daily Values based on a 2,000 calorie diet.
+                                <p className="mt-1 text-[9px] text-green-900 leading-tight ">
+                                     % Daily Values based on a 2,000 calorie diet.
                                 </p>
                             </div>
 
                             {/* Trust Badges */}
-                            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                            <div className="grid grid-cols-1 sm:grid-cols-3 gap-0.5">
                                 {[
                                     { icon: Truck, label: "Fast Delivery", sub: "2-3 Days", color: "#93D2D9" },
                                     { icon: Award, label: "Premium Quality", sub: "Lab Tested", color: "#F59E0B" },
@@ -215,16 +215,16 @@ export default async function ProductDetailPage({ params }) {
                                 ].map((badge, i) => (
                                     <div
                                         key={i}
-                                        className="group bg-white border border-slate-100 rounded-2xl p-4 flex items-center gap-4 hover:border-slate-200 hover:shadow-md transition-all duration-300"
+                                        className="group bg-white border border-slate-100 rounded-xl p-1 flex items-center gap-4 hover:border-slate-200 hover:shadow-md transition-all duration-300"
                                     >
                                         <div
                                             className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform"
-                                            style={{ backgroundColor: `${badge.color}12` }}
+                                            style={{ backgroundColor: `` }}
                                         >
                                             <badge.icon size={20} style={{ color: badge.color }} strokeWidth={2} />
                                         </div>
                                         <div className="text-left">
-                                            <p className="text-sm font-bold text-slate-900">{badge.label}</p>
+                                            <p className="text-sm font-semibold text-slate-900">{badge.label}</p>
                                             <p className="text-[11px] text-slate-400">{badge.sub}</p>
                                         </div>
                                     </div>
