@@ -23,58 +23,57 @@ export default function ShopProductCard({ product }) {
         <article className="
       group relative
       bg-white
-      border border-gray-200
       rounded-xl
       overflow-hidden
    
     ">
 
             {/* IMAGE */}
-          <Link href={`/supplements/${product.id}`}>
-            <div className="relative aspect-square bg-gray-50 p-4">
-                <Image
-                    src={imageSrc}
-                    alt={product.name}
-                    fill
-                    sizes="(max-width: 640px) 100vw, 300px"
-                    className="object-contain transition-transform duration-300 group-hover:scale-105"
-                />
+            <Link href={`/supplements/${product.id}`}>
+                <div className="relative aspect-square  p-4">
+                    <Image
+                        src={imageSrc}
+                        alt={product.name}
+                        fill
+                        sizes="(max-width: 640px) 100vw, 300px"
+                        className="object-contain transition-transform duration-300 group-hover:scale-105"
+                    />
 
-                {/* Discount */}
-                {discount && (
-                    <span className="
+                    {/* Discount */}
+                    {discount && (
+                        <span className="
             absolute top-3 left-3
             bg-black text-white
-            text-[10px] font-bold
-            px-2.5 py-1 rounded-full
+            text-[0.5rem] md:text-[0.7rem] font-bold
+            px-2 md:px-2.5 py-1 rounded-full
           ">
-                        -{discount}%
-                    </span>
-                )}
-            </div>
-          </Link>
+                            -{discount}%
+                        </span>
+                    )}
+                </div>
+            </Link>
 
             {/* CONTENT */}
-            <div className="p-4 flex flex-col gap-3">
+            <div className="p-2 flex flex-col gap-1.5 md:gap-3">
 
                 {/* Vendor */}
-                <span className="text-[10px] uppercase tracking-widest font-semibold text-gray-400">
+                <span className="text-[0.6rem] md:text-[0.7rem] uppercase tracking-widest font-semibold text-gray-400">
                     {product.vendor}
                 </span>
 
                 {/* Name */}
-                <h3 className="text-sm font-semibold text-gray-900 leading-snug line-clamp-2">
+                <h3 className="text-[0.6rem] md:text-[1rem] font-semibold text-gray-900 leading-snug line-clamp-2">
                     {product.name}
                 </h3>
 
                 {/* Protein + Rating */}
                 <div className="flex items-center justify-between">
-                    <span className="text-xs font-semibold text-emerald-600">
+                    <span className="text-[0.6rem] md:text-[0.7rem] font-semibold text-emerald-600">
                         {product.protein_per_serving} Protein
                     </span>
 
                     {product.rating && (
-                        <div className="flex items-center gap-1 text-xs font-semibold text-gray-700">
+                        <div className="flex items-center gap-1 text-[0.6rem] md:text-[0.7rem] font-semibold text-gray-700">
                             <Star size={13} className="fill-yellow-400 text-yellow-400" />
                             {product.rating}
                         </div>
@@ -83,18 +82,28 @@ export default function ShopProductCard({ product }) {
 
                 {/* Benefits */}
                 {product.benefits && (
-                    <div className="flex flex-wrap gap-2">
-                        {product.benefits.slice(0, 2).map((b, i) => (
+                    <div
+                        className="
+      flex gap-2
+      overflow-x-auto
+      whitespace-nowrap
+      max-w-full
+      no-scrollbar
+    "
+                    >
+                        {product.benefits.map((b, i) => (
                             <span
                                 key={i}
                                 className="
-                  text-[10px]
-                  bg-gray-100
-                  text-gray-600
-                  px-2 py-1
-                  rounded-full
-                  font-medium
-                "
+          inline-flex shrink-0
+          text-[0.6rem] md:text-[0.7rem]
+          bg-gray-100
+          text-gray-600
+          px-2 py-1
+          rounded-full
+          font-medium
+          truncate
+        "
                             >
                                 {b}
                             </span>
@@ -102,13 +111,15 @@ export default function ShopProductCard({ product }) {
                     </div>
                 )}
 
+
+
                 {/* Price */}
                 <div className="mt-2">
-                    <p className="text-lg font-semibold text-gray-900">
+                    <p className="text-[1rem] font-semibold text-gray-900">
                         USD {product.sale_price.toLocaleString()}
                     </p>
                     {product.regular_price && (
-                        <p className="text-xs text-gray-400 line-through ">
+                        <p className="text-[0.7rem] text-gray-400 line-through ">
                             USD {product.regular_price.toLocaleString()}
                         </p>
                     )}
