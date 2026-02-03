@@ -39,7 +39,6 @@ export default function ProductImageGallery({ src, alt, discount }) {
                 className="group relative aspect-square   overflow-hidden cursor-zoom-in"
                 onClick={() => setIsFullScreen(true)}
             >
-                {/* <div className="absolute inset-0 z-10 bg-linear-to-tr from-white/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" /> */}
 
                 <Image
                     src={src}
@@ -57,7 +56,7 @@ export default function ProductImageGallery({ src, alt, discount }) {
                 </div>
 
                 {discount && (
-                    <div className={`absolute top-4 left-4 z-20 bg-slate-900 text-white text-[10px] font-semibold px-3 py-1.5 rounded-full shadow-lg flex items-center gap-1 tracking-widest uppercase ${inter.className}`}>
+                    <div className={`absolute top-4 left-4 z-20 bg-slate-800 text-white text-[10px] font-semibold px-3 py-1 rounded-full shadow-lg flex items-center gap-1 tracking-widest uppercase ${inter.className}`}>
                         <Zap size={12} fill="#5ecad6" className="text-[#5ecad6]" />
                         SAVE {discount}%
                     </div>

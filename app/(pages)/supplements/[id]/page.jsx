@@ -77,7 +77,7 @@ export default async function ProductDetailPage({ params }) {
 
             {/* Professional Navbar */}
             <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200/60">
-                <div className="max-w-360 mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+                <div className="max-w-360 mx-auto px-4 sm:px-6 lg:px-8 h-12 flex items-center justify-between">
                     <Link
                         href="/shop/supplements"
                         className="group flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-slate-50 transition-colors"
@@ -241,60 +241,60 @@ export default async function ProductDetailPage({ params }) {
                             <div>
                                 <div className="flex items-center gap-2 mb-3">
                                     <span
-                                        className="w-2 h-2 rounded-full"
+                                        className="w-1.5 h-1.5 rounded-full"
                                         style={{ backgroundColor: THEME.primary }}
                                     />
                                     <span
-                                        className="text-xs font-bold uppercase tracking-[0.2em]"
+                                        className="text-xs font-semibold uppercase tracking-[0.2em]"
                                         style={{ color: THEME.primaryDark }}
                                     >
                                         {product.vendor}
                                     </span>
                                 </div>
 
-                                <h1 className={`${poppins.className} text-3xl sm:text-4xl xl:text-[2.75rem] font-bold leading-[1.1] tracking-tight`}>
+                                <h1 className={`${poppins.className} text-2xl sm:text-4xl xl:text-[2.75rem] font-semibold leading-[1.1] tracking-tight`}>
                                     {product.name}
                                 </h1>
 
-                                <p className="mt-4 text-slate-600 leading-relaxed text-sm sm:text-base">
+                                <p className="mt-4 text-slate-600 leading-relaxed text-xs sm:text-base">
                                     {product.description}
                                 </p>
                             </div>
 
                             {/* Rating Summary */}
-                            <div className="flex items-center gap-4 py-4 border-y border-slate-100">
+                            <div className="flex items-center gap-2 py-1 md:py-2 border-y border-slate-100">
                                 <div className="flex items-center gap-1">
                                     {[...Array(5)].map((_, i) => (
                                         <Star
                                             key={i}
-                                            size={16}
+                                            size={14}
                                             className={i < Math.floor(product.rating) ? "fill-yellow-400 text-yellow-400" : "text-slate-200"}
                                         />
                                     ))}
                                 </div>
-                                <span className="text-sm font-bold">{product.rating}</span>
-                                <span className="text-sm text-slate-400">({product.reviews} verified reviews)</span>
+                                <span className="text-xs font-bold">{product.rating}</span>
+                                <span className="text-xs md:text-sm text-slate-400">({product.reviews} verified reviews)</span>
                             </div>
 
                             {/* Price Card */}
                             <div
-                                className="rounded-2xl p-6 text-white relative overflow-hidden"
+                                className="rounded-lg md:rounded-xl p-4 md:p-6 text-white relative overflow-hidden"
                                 style={{ backgroundColor: THEME.dark }}
                             >
                                 <div className="absolute top-0 right-0 w-32 h-32 opacity-10 rounded-full -mr-10 -mt-10" style={{ backgroundColor: THEME.primary }} />
 
                                 <div className="relative z-10 flex justify-between items-end">
                                     <div>
-                                        <p className="text-xs uppercase tracking-widest text-white/60 mb-1">Current Price</p>
+                                        <p className="text-[0.5rem] md:text-[0.6rem] uppercase tracking-widest text-white/60 mb-1">Current Price</p>
                                         <div className="flex items-baseline gap-1">
                                             <span className="text-lg font-medium text-white/80">USD</span>
-                                            <span className="text-4xl font-bold tracking-tight">
+                                            <span className="text-2xl md:text-3xl font-bold tracking-tight">
                                                 {product.sale_price.toLocaleString()}
                                             </span>
                                         </div>
                                         {product.regular_price && (
                                             <div className="flex items-center gap-2 mt-1">
-                                                <span className="text-sm line-through text-white/40">
+                                                <span className="text-xs line-through text-white/40">
                                                     USD {product.regular_price.toLocaleString()}
                                                 </span>
                                                 <span
@@ -309,7 +309,7 @@ export default async function ProductDetailPage({ params }) {
 
                                     <div className="text-right">
                                         <div
-                                            className="w-12 h-12 rounded-full flex items-center justify-center mb-2"
+                                            className="w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center mb-2"
                                             style={{ backgroundColor: THEME.primary }}
                                         >
                                             <Package size={20} style={{ color: THEME.dark }} />
@@ -320,20 +320,20 @@ export default async function ProductDetailPage({ params }) {
                             </div>
 
                             {/* Benefits */}
-                            <div className="bg-white rounded-2xl border border-gray-100 p-6 ">
-                                <h3 className="text-sm font-bold uppercase tracking-wider text-slate-400 mb-4">
+                            <div className="bg-white rounded-lg border border-gray-100 p-2 ">
+                                <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-400 mb-3">
                                     Key Benefits
                                 </h3>
                                 <div className="space-y-3">
                                     {product.benefits?.map((benefit, i) => (
-                                        <div key={i} className="flex items-start gap-3">
+                                        <div key={i} className="flex items-start gap-1">
                                             <div
-                                                className="w-5 h-5 rounded-full flex items-center justify-center shrink-0 mt-0.5"
+                                                className="w-5 h-5 rounded-full flex items-center justify-center shrink-0 "
                                                 style={{ backgroundColor: THEME.primaryLight }}
                                             >
                                                 <CheckCircle2 size={12} style={{ color: THEME.primaryDark }} />
                                             </div>
-                                            <span className="text-sm text-slate-600 leading-relaxed">{benefit}</span>
+                                            <span className="text-xs text-slate-600 leading-relaxed">{benefit}</span>
                                         </div>
                                     ))}
                                 </div>
@@ -366,16 +366,16 @@ export default async function ProductDetailPage({ params }) {
                 </div>
 
                 {/* Related Products Section */}
-                <section className="mt-20 lg:mt-32">
+                <section className="mt-12 lg:mt-22">
                     <div className="flex items-center justify-between mb-8">
                         <div>
                             <span
-                                className="text-xs font-bold uppercase tracking-[0.2em] mb-2 block"
+                                className="text-xs font-semibold uppercase tracking-widest mb-2 block"
                                 style={{ color: THEME.primaryDark }}
                             >
                                 You May Also Like
                             </span>
-                            <h2 className={`${poppins.className} text-2xl sm:text-3xl font-bold`}>
+                            <h2 className={`${poppins.className} text-2xl sm:text-3xl font-semibold`}>
                                 Related Products
                             </h2>
                         </div>
