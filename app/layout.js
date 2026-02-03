@@ -1,3 +1,5 @@
+
+import CartManager from "./components/CartManager";
 import "./globals.css";
 
 
@@ -12,6 +14,7 @@ export default function RootLayout({ children }) {
     <html lang="en" suppressHydrationWarning>
       <body className="selection:bg-[#93D2D9] selection:text-black"
       >
+        <CartManager />
         {children}
       </body>
     </html>
