@@ -36,7 +36,7 @@ export default function ProductImageGallery({ src, alt, discount }) {
     return (
         <>
             <div
-                className="group relative aspect-square bg-white rounded-lg md:rounded-lg border border-gray-100 overflow-hidden cursor-zoom-in"
+                className="group relative aspect-square  rounded-lg md:rounded-lg  overflow-hidden cursor-zoom-in"
                 onClick={() => setIsFullScreen(true)}
             >
                 <div className="absolute inset-0 z-10 bg-linear-to-tr from-white/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
