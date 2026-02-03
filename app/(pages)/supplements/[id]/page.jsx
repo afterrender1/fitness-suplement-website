@@ -437,19 +437,19 @@ export default async function ProductDetailPage({ params }) {
             </main>
 
             {/* Mobile Sticky CTA */}
-            <div className="lg:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-slate-200 p-4 flex gap-3 z-50 safe-area-pb">
+            <div className="lg:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-slate-200 p-2 flex gap-3 z-50 safe-area-pb">
                 <button
-                    className="flex-1 h-12 rounded-xl font-bold text-sm uppercase tracking-wider flex items-center justify-center gap-2 text-white"
+                    className="flex-1 h-10 rounded-lg font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 text-white"
                     style={{ backgroundColor: THEME.dark }}
                 >
                     <ShoppingCart size={18} />
                     Add to Cart
                 </button>
                 <button
-                    className="w-12 h-12 rounded-xl flex items-center justify-center border-2"
-                    style={{ borderColor: THEME.primary }}
+                    className="w-10 h-10 rounded-lg flex items-center justify-center border-2 text-green-500"
+                 
                 >
-                    <Heart size={18} style={{ color: THEME.primaryDark }} />
+                    <Heart size={18} className="text-green-500"/>
                 </button>
             </div>
         </div>

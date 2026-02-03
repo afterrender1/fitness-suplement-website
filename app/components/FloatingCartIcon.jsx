@@ -11,7 +11,7 @@ const FloatingCartIcon = ({ onClick, itemCount = 0 }) => {
             whileHover={{ y: -4 }}
             whileTap={{ scale: 0.95 }}
             onClick={onClick}
-            className="fixed bottom-8 right-8 z-50 cursor-pointer rounded-full bg-black p-4 shadow-[0_20px_50px_rgba(0,0,0,0.2)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.4)] transition-shadow duration-300 group"
+            className="fixed bottom-15 right-4 lg:bottom-8 lg:right-8 z-50 cursor-pointer rounded-full bg-black p-3 shadow-[0_20px_50px_rgba(0,0,0,0.2)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.4)] transition-shadow duration-300 group"
         >
             {/* Notification Badge */}
             <AnimatePresence mode="popLayout">
@@ -33,7 +33,7 @@ const FloatingCartIcon = ({ onClick, itemCount = 0 }) => {
                 whileHover={{ rotate: [-5, 5, 0] }}
                 transition={{ duration: 0.3 }}
             >
-                <ShoppingBag className="text-white group-hover:text-[#93D2D9] transition-colors" size={24} strokeWidth={2.5} />
+                <ShoppingBag className="text-white group-hover:text-[#93D2D9] transition-colors h-5 w-5 lg:h-6 lg:w-6 "  strokeWidth={2.5} />
             </motion.div>
         </motion.div>
     );
