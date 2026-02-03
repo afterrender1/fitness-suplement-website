@@ -381,7 +381,7 @@ export default async function ProductDetailPage({ params }) {
                         </div>
                         <Link
                             href="/shop/supplements"
-                            className="hidden sm:flex items-center gap-1 text-sm font-semibold hover:gap-2 transition-all"
+                            className="flex items-center gap-1 text-sm font-semibold hover:gap-2 transition-all"
                             style={{ color: THEME.primaryDark }}
                         >
                             View All <ChevronRight size={16} />
@@ -412,14 +412,15 @@ export default async function ProductDetailPage({ params }) {
                                         </span>
                                     )}
                                 </div>
-                                <div className="p-1 md:p-4">
+                               <div className="p-1 md:p-4 flex flex-col flex-1">
+
                                     <p className="text-[0.6rem] md:text-[0.7rem] font-semibold uppercase tracking-wider text-slate-400 mb-1">
                                         {item.vendor}
                                     </p>
                                     <h3 className="font-semibold text-slate-900 text-[0.7rem] md:text-[0.9rem] line-clamp-2 mb-2 group-hover:text-slate-600 transition-colors">
                                         {item.name}
                                     </h3>
-                                    <div className="inline-flex items-center gap-4 px-2 py-2  shadow-[0_2px_10px_-3px_rgba(0,0,0,0.07)]">
+                                    <div className="inline-flex items-center gap-4 px-2 py-2  ">
                                         <div className="flex flex-col">
                                             <span className="text-[1.1rem] font-bold text-slate-800 tracking-tight">
                                                 ${item.sale_price.toLocaleString()}
