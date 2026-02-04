@@ -1,6 +1,7 @@
 
 import CartManager from "./components/CartManager";
 import "./globals.css";
+import Providers from "./providers";
 
 
 export const metadata = {
@@ -14,8 +15,10 @@ export default function RootLayout({ children }) {
     <html lang="en" suppressHydrationWarning>
       <body className="selection:bg-[#93D2D9] selection:text-black"
       >
-        <CartManager />
-        {children}
+        <Providers>
+          <CartManager />
+          {children}
+        </Providers>
       </body>
     </html>
   );
