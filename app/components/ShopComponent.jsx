@@ -1,7 +1,6 @@
 // "use client";
 
 import React, { useState } from 'react';
-import { SlidersHorizontal } from 'lucide-react';
 import { Poppins, Inter } from "next/font/google";
 import ShopProductCard from "@/app/components/ShopProductCard";
 import shopData from "@/app/data/shopData.json";
@@ -80,7 +79,7 @@ const ShopComponent = () => {
                             <button
                                 key={cat}
                                 onClick={() => setActiveCategory(cat)}
-                                className={`shrink-0 px-5 py-2 rounded-sm text-xs sm:text-sm font-bold transition-all ${activeCategory === cat
+                                className={`shrink-0 px-5 py-2 rounded-lg text-xs sm:text-sm font-semibold transition-all ${activeCategory === cat
                                     ? "bg-black text-white"
                                     : "bg-white text-slate-500 hover:bg-slate-100"
                                     }`}
@@ -91,9 +90,9 @@ const ShopComponent = () => {
                     </div>
 
                     {/* Filter button */}
-                    <button className="flex items-center gap-2 text-xs sm:text-sm font-bold uppercase tracking-widest text-slate-900">
+                    {/* <button className="flex items-center gap-2 text-xs sm:text-sm font-bold uppercase tracking-widest text-slate-900">
                         <SlidersHorizontal size={16} /> Filter
-                    </button>
+                    </button> */}
                 </div>
 
                 {/* Product Grid */}

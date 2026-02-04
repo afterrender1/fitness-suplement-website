@@ -361,6 +361,7 @@ export default function ProductDetailClient({ product }) {
                                     Add to Cart
                                 </button>
 
+                           <Link href="/checkout">
                                 <button
                                     className="w-full h-14 rounded-xl font-bold text-sm uppercase tracking-wider flex items-center justify-center gap-3 border-2 transition-all hover:bg-slate-50"
                                     style={{ borderColor: THEME.primary, color: THEME.primaryDark }}
@@ -368,6 +369,8 @@ export default function ProductDetailClient({ product }) {
                                     <CreditCard size={20} />
                                     Buy Now
                                 </button>
+                           
+                           </Link>
 
                                 <p className="text-center text-xs text-slate-400 pt-2">
                                     Free shipping on orders over Rs 5,000 • 30-day returns
