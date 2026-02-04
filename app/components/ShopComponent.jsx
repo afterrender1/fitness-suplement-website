@@ -15,7 +15,7 @@ const ShopComponent = () => {
     const products = shopData.products;
 
     return (
-        <main className={`min-h-screen bg-[#FAFAFA] rounded-t-3xl md:rounded-t-4xl shadow-[0_-20px_50px_rgba(0,0,0,0.1)] relative z-10 pt-12 sm:pt-18 pb-32 2xl:pt-40 2xl:pb-48 ${inter.className}`}>
+        <main className={`min-h-screen bg-[#ffff] rounded-t-3xl md:rounded-t-4xl shadow-[0_-20px_50px_rgba(0,0,0,0.1)] relative z-10 pt-12 sm:pt-18 pb-32 2xl:pt-40 2xl:pb-48 ${inter.className}`}>
             <div className="max-w-7xl 2xl:max-w-440 mx-auto px-6 lg:px-8 2xl:px-12">
 
                 {/* Header Section */}
