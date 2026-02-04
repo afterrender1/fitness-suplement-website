@@ -5,6 +5,7 @@ import { motion, AnimatePresence, LayoutGroup } from 'framer-motion';
 import { X, Plus, Minus, Trash2, ArrowRight, ShieldCheck, Sparkles } from "lucide-react";
 import { useSelector, useDispatch } from "react-redux";
 import { removeFromCart, increaseQty, decreaseQty, toggleCart } from "@/app/store/cartSlice";
+import Link from 'next/link';
 
 const fontStyles = `
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Syne:wght@700;800&display=swap');
@@ -169,13 +170,18 @@ export default function CartDrawer() {
                                     </div>
                                 </div>
 
-                                <button className="group relative w-full h-12 bg-black text-white rounded-xl overflow-hidden transition-all active:scale-[0.98]">
+                              <Link href="/checkout">
+                              
+                              
+                                <button onClick={()=> handleClose()} className="group relative w-full h-12 bg-black text-white rounded-xl overflow-hidden transition-all active:scale-[0.98]">
                                     <div className="absolute inset-0 bg-neutral-800 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
                                     <div className="relative z-10 flex items-center justify-center gap-3">
                                         <span className="font-syne text-[0.85rem] font-700 uppercase tracking-widest">Complete Order</span>
                                         <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                                     </div>
                                 </button>
+                              
+                              </Link>
 
                                 <div className="mt-4 flex items-center justify-center gap-1.5 text-[0.55rem] font-800 text-green-800 uppercase tracking-widest">
                                     <ShieldCheck size={12} className="text-green-800" />
