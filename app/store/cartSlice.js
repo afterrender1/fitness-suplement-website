@@ -2,12 +2,18 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
     items: [], // { id, name, price, image, qty }
+    isOpen: false, // Control drawer visibility globally
 };
 
 const cartSlice = createSlice({
     name: "cart",
     initialState,
     reducers: {
+        // Toggle the cart open/close state
+        toggleCart: (state) => {
+            state.isOpen = !state.isOpen;
+        },
+
         addToCart: (state, action) => {
             const item = action.payload;
             const existing = state.items.find((i) => i.id === item.id);
@@ -17,6 +23,8 @@ const cartSlice = createSlice({
             } else {
                 state.items.push({ ...item, qty: 1 });
             }
+            // Optional: Auto-open cart when adding an item
+            state.isOpen = true;
         },
 
         removeFromCart: (state, action) => {
@@ -32,7 +40,12 @@ const cartSlice = createSlice({
 
         decreaseQty: (state, action) => {
             const item = state.items.find((i) => i.id === action.payload);
-            if (item && item.qty > 1) item.qty -= 1;
+            if (item && item.qty > 1) {
+                item.qty -= 1;
+            } else if (item && item.qty === 1) {
+                // Optional: Remove item if qty hits 0
+                state.items = state.items.filter((i) => i.id !== action.payload);
+            }
         },
 
         clearCart: (state) => {
@@ -42,6 +55,7 @@ const cartSlice = createSlice({
 });
 
 export const {
+    toggleCart,
     addToCart,
     removeFromCart,
     increaseQty,
